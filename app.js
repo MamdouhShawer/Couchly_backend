@@ -14,9 +14,9 @@ mongoose.connect(dburi)
 import index_router from "./routers/index.js";
 
 
-  // Read the current directory name
-  const __filename = fileURLToPath(import.meta.url);
- const __dirname = dirname(__filename);
+// Read the current directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
  const app = express();
 
@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 app.get('/add',(req,res)=>{
   const user=new Users({
     Firstname:"Mamdouh",
-    Lastname:"Lastname",
+    Lastname:"Shawer",
     Username:"Ayhaga",
     email:"mamdouh@gmail.com",
     password:"123",
