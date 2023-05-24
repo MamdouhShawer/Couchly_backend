@@ -12,6 +12,7 @@ mongoose.connect(dburi)
 .catch(console.log("error"));
 //import routers
 import index_router from "./routers/index.js";
+import shop_router from "./routers/shop.js";
 
 
 
@@ -23,7 +24,8 @@ const __dirname = dirname(__filename);
  const app = express();
 
  app.use('/', index_router);
- 
+ app.use('/shop',shop_router);
+
  app.use(express.static(path.join(__dirname, 'public')))
 
 
