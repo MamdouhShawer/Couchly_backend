@@ -14,6 +14,8 @@ mongoose.connect(dburi)
 import index_router from "./routers/index.js";
 
 
+
+
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -21,6 +23,7 @@ const __dirname = dirname(__filename);
  const app = express();
 
  app.use('/', index_router);
+ 
  app.use(express.static(path.join(__dirname, 'public')))
 
 

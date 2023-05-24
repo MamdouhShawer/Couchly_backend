@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/add-deleteProduct.css">
+    <script defer src="../javascript/add-delete.js"></script>
+    <title>couchly</title>
+</head>
+<body>
+     <section id="sidebar">
+    <a href="/dashboard" class="brand">
+        <i class='bx bxs-smile'></i>
+        <span class="text">AdminHub</span>
+    </a>
+    <ul class="side-menu top">
+        <li class="active">
+            <a href="/dashboard">
+                <i class='bx bxs-dashboard'></i>
+                <span class="text">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="/myStore">
+                <i class='bx bxs-shopping-bag-alt' ></i>
+                <span class="text">My Store</span>
+            </a>
+        </li>
+        <li>
+            <a href="/messages">
+                <i class='bx bxs-message-dots' ></i>
+                <span class="text">Message</span>
+            </a>
+        </li>
+        <li>
+            <a href="/addUser">
+                <i class='bx bxs-user' ></i>
+                <span class="text">Add User</span>
+            </a>
+        </li>
+        <li>
+            <a href="/removeUser">
+                <i class='bx bxs-user' ></i>
+                <span class="text">Remove User</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-store-alt'></i>
+                <span class="text">Add Product</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-store-alt'></i>
+                <span class="text">Remove Product</span>
+            </a>
+        </li>
+    </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bxs-exit' ></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        
+        </ul>
+</section>
+
+<section id="content">
+
+    <nav>
+        <i class='bx bx-menu' ></i>
+        <a href="#" class="nav-link">Categories</a>
+        <form action="#">
+            <div class="form-input">
+                <input type="search" placeholder="Search....">
+                <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+            </div>
+        </form>
+        <a href="#" class="notification">
+            <i class='bx bxs-bell' ></i>
+            <span class="num">8</span>
+        </a>
+        <a href="#" class="profile">
+            <img src="Ahmed.jpg" alt="">
+        </a>
+    </nav>
+    <div class="container">
+        <header>Add/Delete Product </header>
+
+<form id="form" action="/">
+  <div class="form first">
+    <div class="product details">
+    <div class="fields">
+      <div class="left-side">
+        <div class="label-field">
+          <label for="input">Product Name</label> 
+         </div>
+         <div class="input-field">
+         <input id ="ProductName" type ="text" name="ProductName"  placeholder="" >
+         <div class="error"></div>
+        </div>
+        <div class="label-field">
+           <label for="input">Product Description FR</label>
+            </div>
+            <div class="input-field">
+            <input  id="ProductDescriptionFR" type ="text" name="ProductDescriptionFR" placeholder="" >
+            <div class="error"></div>
+         </div>
+         <div class="label-field">
+          <label for="input">Product Category</label>
+         </div>
+        <div class="input-field">
+          <input id="ProductCategory" type ="text" name="ProductCategory" placeholder="">
+          <div class="error"></div>
+        </div>
+        <div class="label-field">
+          <label for="input">Product Brand</label> 
+        </div>
+        <div class="input-field">
+            <input id="ProductBrand" type ="text" name="ProductBrand" placeholder="">
+            <div class="error"></div>
+        </div>
+        <div class="label-field">
+          <label for="input">Stock Quantity</label> 
+        </div>
+    <div class="input-field">
+         <input id="StockQuantity" type ="number" name="StockQuantity" placeholder="" >
+         <div class="error"></div>
+    </div>
+    <div class="label-field">
+      <label for="input">Available Quantity</label>
+    </div>
+    <div class="input-field">
+            <input id="AvailableQuantity" type ="number" name="AvailableQuantity" placeholder="" >
+            <div class="error"></div>
+    </div>
+           <div class="label-field">
+      <label for="input">Main Price</label>
+    </div>
+    <div class="input-field">
+            <input id="MainPrice" type ="number" name="MainPrice"  placeholder="" >
+            <div class="error"></div>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="label-field">
+      <label for="input">Product Description</label>
+    </div>
+    <div class="input-field">
+         <textarea id="ProductDescription"class="form-control" name="ProductDescription" placeholder="" ></textarea>
+         <div class="error"></div>
+    </div>
+    <div class="label-field">
+      <label for="input">Percentage Discount</label>
+    </div>
+    <div class="input-field">
+            <input id="PercentageDiscount" type="text" name="PercentageDiscount" placeholder="" >
+            <div class="error"></div>
+     </div>
+     <div class="label-field">
+      <label for="input">Stock Alert</label>
+    </div>
+    <div class="input-field">
+         <input id="StockAlert" type =" text" name="StockAlert" placeholder ="" >
+         <div class="error"></div>
+    </div>
+    <div class="label-field">
+        <label for="input">Discount Price</label> 
+    </div>
+    <div class="input-field">
+            <input id="DiscountPrice" type ="number" name="DiscountPrice" placeholder="">
+            <div class="error"></div>
+    </div>
+    <div class="label-field">
+      <label for="input">Color Type</label>
+  </div>
+    <div class="input-field">
+        <input id="ColorType" type ="text" name="ColorType"  placeholder="" >
+        <div class="error"></div>
+    </div>
+    <div class="label-field">
+      <label for="input">Main image</label> 
+  </div>
+    <div class="input-field">
+         <input id="Mainimage" type ="file" name="Mainimage" placeholder="" >
+         <div class="error"></div>
+    </div>
+    <div class="label-field">
+      <label for="input">Status</label>  
+  </div>
+    <div class="input-field">
+            <input id="Status" type ="text" name="Status"   placeholder="" >
+            <div class="error"></div>
+    </div>
+    </div>
+  </div >
+  <button class="add-btn">Add</button>
+  <button class="delete-btn">Delete</button>
+  </div>
+  </div>
+  </form>
+
+  </div>
+</body>
+</html>

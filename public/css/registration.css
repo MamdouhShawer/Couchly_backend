@@ -1,0 +1,127 @@
+.package{
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    padding-left: 0px;
+   
+}
+
+.form{
+    padding: 40px;
+    margin: 40px;
+    margin-top: 10px;
+    border-style: groove;
+    border-color: rgb(155,138,18); 
+    border-right: none;  
+    border-top: none; 
+    border-bottom: none; 
+    border-left: none;
+    margin-bottom: 10px;
+}
+.register{
+    font-weight: 800;
+    font-size: 50px;
+    color: black ;
+    padding: 50px;
+    margin-left: 20px;
+    padding-left: 70px;
+  
+}
+.inputControl{
+    margin-top: 30px;
+    margin-left: 35px;
+
+}
+ .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    
+
+  }
+  
+  .left {
+    left: 0;
+    background-color:  rgb(235, 246, 244);
+   
+}
+  
+  .right {
+    right: 0;
+    background-color: white; 
+    border-left:  1px solid rgb(155,138,18);
+    
+  }
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .button{ 
+    margin-top: 20px;
+    height:30px;
+    width:200px;
+    margin-left: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 2px 7px 0 rgba(58, 52, 52, 0.19);
+    border-radius: 12px;
+    border-width: 0.2px;
+    cursor: pointer;
+}
+.button1{ 
+    margin-top: 20px;
+    height:30px;
+    width:200px;
+    margin-left: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 2px 7px 0 rgba(58, 52, 52, 0.19);
+    border-radius: 12px;
+    border-width: 0.2px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: rgb(213, 199, 116);
+    color: white;
+}
+.button1:hover {
+    background-color: rgb(213, 199, 116);
+    color: white;
+}
+
+.inputControl input:focus
+{
+    outline: 0;
+    text-align: left;
+}
+.inputControl.success input
+{
+    border:2px solid #09c372;
+    text-align: left;
+}
+
+.inputControl.error input
+{
+    border:2px solid #ff3860;
+}
+.inputControl.error 
+{
+    color: #ff3860;
+    font-size: 12px;
+   
+}
+.inputControl.erro input
+{
+    border:2px solid #ff3860;
+}
+.inputControl.erro 
+{
+    color: #ff3860;
+}
+.inputControl.success
+{
+    color: #09c372;
+}
+

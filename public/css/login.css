@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(235, 246, 244);
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+    height: 100 vh;
+}
+.package{
+   background-color: rgb(255, 255, 255);
+   border-radius: 9px;
+}
+.form{
+   padding: 40px;
+   margin: 20px;
+   border-style: groove;
+   border-color: rgb(155,138,18);
+}
+.login{ 
+   font-weight: 700;
+   font-size: 40px;
+   color: rgb(0, 0, 0);
+   padding: 70px;
+  
+   
+}
+.email{
+margin-top: 30px;
+}
+.password{
+   margin-top: 20px;
+}
+.b{
+   margin-top: 20px;
+   text-align: center;
+   block-size: 50px;
+}
+.link{
+   margin-top: 20px;
+   text-align: center;
+   font-size: small; 
+}
+
+.check{
+   margin-top: 10px;
+   border-spacing: 50px;
+   font-size: small; 
+}
+a:link {
+   color: rgb(0,109,91);
+   background-color: transparent;
+   text-decoration: none;
+ }
+ a:hover {
+   color: rgb(155,138,18);
+   background-color: transparent;
+   text-decoration: underline;
+ }
+.text{
+margin-right: 15px;
+}
+.button{ 
+   margin-top: 20px;
+   height:30px;
+   width:230px;
+   cursor: pointer; 
+   border: none;
+}
+.button:hover {
+   background-color: rgb(213, 199, 116);
+   color: white;
+}
+.logo{
+   position: absolute;
+   width: 300px;
+   margin-top:0px;
+   margin-bottom: 475px;
+   cursor: pointer;
+}
+.account{
+   margin-top: 10px;
+   text-align: center;
+   font-size: small;
+  
+}
