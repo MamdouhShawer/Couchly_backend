@@ -1,34 +1,13 @@
 <html>
     <head>
-        <title>Beds</title>
+        <title><%= title %></title>
 
-        <link rel="stylesheet" href="../css/beds.css">
+        <link rel="stylesheet" href="/css/beds.css">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     </head>
     <body>
-      <section id="header">
-        <a href="/index"><img src="../../imgs/logo.png" class="logo"
-                alt="Logo" width="145" height="50"></a>
-        <div class="container">
-            <div>
-                <ul id="navbar">
-                    <input type="search" id="search" placeholder="Search..">
-                    <li><a href="../../index.ejs" >Home</a></li>
-                    <li><a href="/Categories"class="active">Categories</a></li>
-                    <li><a href="/about" >About</a></li>
-                    <li><a href="/cart">Cart</a></li>
-                    <li><a href="/wishlist">Wishlist</a></li>
-                     <li><a href="/login">Log in</a></li>
-
-                    </div>
-                </ul>
-
-            </div>
-
-        </div>
-
-    </section>
+      <%- include('../partials/nav') %>
         <table>
             <tr>
               <h1>Beds</h1>
@@ -136,60 +115,7 @@
 </table>
 </section>
 
-<footer class="pageFooter" >
-  <div class="col">
-      <img  class="Logo "src="../../imgs/logo.png"alt="" width="145" height="50">
-      <h4>Contact</h4>
-      <p><strong>Adress: </strong>Misr International University</p>
-      <p><strong>Phone: </strong>01000000000</p>
-      <p><strong>Hours: </strong>9 am - 12 am . Mon-Sat</p>
-      <div class = "follow">
-          <h4>Follow us</h4>
-          <div class = "icon">
-              <a href ="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i></a>
-              <a href ="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-              <a href ="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-              <a href ="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a>
-              <a href ="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-          </div>
-      </div>
-  </div>
-  <div class="col">
-      <h4>About</h4>
-      <a href="/about">About us</a>
-      <a href="/index">Home</a>
-      <a href="/privacyPolicy">Privacy policy</a>
-      <a href="/terms&condition">Terms & conditions</a>
-   
-  </div>
-
-  <div class="col">
-      <h4>My Acoount</h4>
-      <a href="/login">Sign in</a>
-      <a href="/cart">View cart</a>
-      <a href="/wishlist">My wishlist</a>
-   
-  </div>
-
-  <div class="col install">
-      <h4>Install app</h4>
-      <p>From App-Store or Google play</p>
-      <div class="row">
-          <img src="../../imgs/appStore.png" width="130" height="40">
-          <img src="../../imgs/googlePlay (2).png" width="130" height="40">
-      </div>
-      <p>Secured payment geteways</p>
-      <img src="../../imgs/Payment.png" width="300" height="50">
-  
-  </div>
-
- 
-</footer>
-
-
-       <div class="copyright">
-          <p>© 2023, Couchly - E-Commerce</p>
-       </div>
+<%- include('../partials/footer') %>
 
 </body>
 </html>
