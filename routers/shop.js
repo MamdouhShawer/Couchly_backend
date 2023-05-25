@@ -2,10 +2,10 @@ import {Router} from 'express';
 
 const router=Router();
 
-router.get('/shop',function(req,res){
+router.get('/',function(req,res){
     console.log('shop.js: GET /shop');
 
-    res.render('/pages/shop',{title:'Mamdoouh',});
+    res.render('pages/shop',{title:'Categories',});
 });
 
 export default router;
