@@ -55,19 +55,10 @@ window.addEventListener('resize', function() {
 })
 const form=document.getElementById('form');
 const ProductName=document.getElementById('ProductName');
-const ProductDescriptionFR=document.getElementById('ProductDescriptionFR');
 const ProductCategory=document.getElementById('ProductCategory');
-const ProductBrand=document.getElementById('ProductBrand');
-const StockQuantity=document.getElementById('StockQuantity');
-const AvailableQuantity=document.getElementById('AvailableQuantity');
 const MainPrice=document.getElementById('MainPrice');
-const ProductDescription=document.getElementById('ProductDescription');
-const PercentageDiscount=document.getElementById('PercentageDiscount');
-const StockAlert=document.getElementById('StockAlert');
-const DiscountPrice=document.getElementById('DiscountPrice');
-const ColorType=document.getElementById('ColorType');
+const SalePrcent=document.getElementById('SalePercent');
 const Mainimage=document.getElementById('Mainimage');
-const Status=document.getElementById('Status');
 
 
 form.addEventListener('submit',e =>
@@ -107,35 +98,19 @@ const setsuccess=element=>
 const validateInputs=()=>
 {
     const ProductNameValue=ProductName.value.trim();
-    const ProductDescriptionFRValue=ProductDescriptionFR.value.trim();
     const ProductCategoryValue=ProductCategory.value.trim();
-    const ProductBrandValue=ProductBrand.value.trim();
-    const StockQuantityValue=StockQuantity.value.trim();
-    const AvailableQuantityValue=AvailableQuantity.value.trim();
     const MainPriceValue=MainPrice.value.trim();
-    const ProductDescriptionValue=ProductDescription.value.trim();
-    const PercentageDiscountValue=PercentageDiscount.value.trim();
-    const StockAlertValue=StockAlert.value.trim();
-    const DiscountPriceValue=DiscountPrice.value.trim();
-    const ColorTypeValue=ColorType.value.trim();
+    const SalePercentValue=SalePrcent.value.trim();
     const MainimageValue=Mainimage.value.trim();
-    const StatusValue=Status.value.trim();
-   if(ProductNameValue==='')
+
+
+    if(ProductNameValue==='')
     {
         seterror(ProductName,'Product Name is required')
     }
     else
     {
-        setsuccess(ProductDescriptionFR);
-
-    }
-    if(ProductDescriptionFRValue==='')
-    {
-        seterror(ProductDescriptionFR,'Product DescriptionFR is required')
-    }
-    else
-    {
-        setsuccess(ProductDescriptionFR);
+        setsuccess(ProductName);
 
     }
     if(ProductCategoryValue==='')
@@ -147,33 +122,6 @@ const validateInputs=()=>
         setsuccess(ProductCategory);
 
     }
-    if(ProductBrandValue==='')
-    {
-        seterror(ProductBrand,'Product Brand is required')
-    }
-    else
-    {
-        setsuccess(ProductBrand);
-
-    }
-    if(StockQuantityValue==='')
-    {
-        seterror(StockQuantity,'Stock Quantity is required')
-    }
-    else
-    {
-        setsuccess(StockQuantity);
-
-    }
-    if(AvailableQuantityValue==='')
-    {
-        seterror(AvailableQuantity,'Available Quantity is required')
-    }
-    else
-    {
-        setsuccess(AvailableQuantity);
-
-    }
     if(MainPriceValue==='')
     {
         seterror(MainPrice,'Main Price is required')
@@ -183,45 +131,13 @@ const validateInputs=()=>
         setsuccess(MainPrice);
 
     }
-    if(ProductDescriptionValue==='')
+    if(SalePercentValue==='')
     {
-        seterror(ProductDescription,'Product Description is required')
+        seterror(SalePercent,'Sale Percent is required')
     }
     else
     {
-        setsuccess(ProductDescription);
-    }
-    if(PercentageDiscountValue==='')
-    {
-        seterror(PercentageDiscount,'Percentage Discount is required')
-    }
-    else
-    {
-        setsuccess(PercentageDiscount);
-    }
-    if(StockAlertValue==='')
-    {
-        seterror(StockAlert,'Stock Alert is required')
-    }
-    else
-    {
-        setsuccess(StockAlert);
-    }
-    if(DiscountPriceValue==='')
-    {
-        seterror(DiscountPrice,'Discount Price is required')
-    }
-    else
-    {
-        setsuccess(DiscountPrice);
-    }
-    if(ColorTypeValue==='')
-    {
-        seterror(ColorType,'Color Type is required')
-    }
-    else
-    {
-        setsuccess(ColorType);
+        setsuccess(SalePrcent)
     }
     if(MainimageValue==='')
     {
@@ -231,13 +147,4 @@ const validateInputs=()=>
     {
         setsuccess(Mainimage);
     }
-    if(StatusValue==='')
-    {
-        seterror(Status,'Status is required')
-    }
-    else
-    {
-        setsuccess(Status);
-    }
 };
-
