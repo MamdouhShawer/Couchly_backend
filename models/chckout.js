@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 const Schema=mongoose.Schema;
 
 const checkSchmea=new Schema({
-fn:{
+FirstName:{
     type: String,
     required: true,
 },
-ln:{
+LastName:{
     type: String,
     required: true,
 },

@@ -4,8 +4,8 @@ const checkform= async (req,res)=>{
     
 
     const ch = new check ({
-        fn: req.body.Fname,
-        ln: req.body.Lname,
+        FirstName: req.body.Fname,
+        LastName: req.body.Lname,
         phoneNum: req.body.phone,
         Adress: req.body.adress,
         CardName: req.body.c,
