@@ -78,6 +78,16 @@ const ValInput=()=>
         else
         setSuccess(ConfirmPass)
     }
+   /* const user=new Users({
+        Firstname:"Mamdouh",
+        Lastname:"SHAWER",
+        Username:"Ayhaga",
+        email:"mamdouh@gmail.com",
+        password:"123",
+        image:"mamdouh",
+        type:"admin"
+      });
+      user.save();*/
 }
 
 const isValidEmail = email=>
