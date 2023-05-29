@@ -5,61 +5,63 @@
         <link rel="stylesheet" href="/css/checkout.css">
         <link rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+            
+            <script src="/js/checkout.js"></script>
     </head>
     <body>
         <%- include('../partials/nav') %>
         <h2>Payment Details</h2>
         <div class="form-container">
-            <form action="*" class="checkout-form" id="form">
+            <form action="checkform" method="post" class="checkout-form" id="checkform">
                 <div class="input-container">
                     <div class="input-line">
                         <label for="Fname">First name</label>
-                        <input type="text" name="Fname" id="Fname" placeholder="first name" required>
+                        <input type="text" name="Fname" id="Fname" placeholder="first name" >
                         <span class="error"></span>
                         <div class="erro"></div>
                     </div>
                     <div class="input-line">
                         <label for="Lname">Last name</label>
-                        <input type="text" name="Lname" id="Lname" placeholder="last name" required>
+                        <input type="text" name="Lname" id="Lname" placeholder="last name" >
                         <span class="error"></span>
                         <div class="erro"></div>
                     </div>
                 </div> 
                 <div class="input-line">
                     <label for="phone">Phone number</label>
-                    <input type="text" name="phone" id="phone" placeholder="enter your number" required>
+                    <input type="text" name="phone" id="phone" placeholder="enter your number" >
                     <span class="error"></span>
                     <div class="erro"></div>
                 </div>
                 <div class="input-line">
                     <label for="loc">Adress</label>
-                    <input type="text" name="adress" id="adress" placeholder="enter your adress" required>
+                    <input type="text" name="adress" id="adress" placeholder="enter your adress" >
                     <span class="error"></span>
                     <div class="erro"></div>
                 </div>
                
                 <div class="input-line">
-                    <label for="name">Name on card</label>
-                    <input type="text" name="name" id="nameCard" placeholder="your name and surname" required>
+                    <label for="cardName">Name on card</label>
+                    <input type="text" name="c" id="cardN" placeholder="enter your card name" >
                     <span class="error"></span>
                     <div class="erro"></div>
                 </div>
                 <div class="input-line">
                     <label for="card">Card number</label>
-                    <input type="text" name="card" id="card" placeholder="1111-2222-3333-4444" required>
+                    <input type="text" name="card" id="card" placeholder="1111-2222-3333-4444" >
                     <span class="error"></span>
                     <div class="erro"></div>
                 </div>
                 <div class="input-container">
                     <div class="input-line">
                         <label for="date">Expiring date</label>
-                        <input type="text" name="date" id="date" placeholder="09-21" required>
+                        <input type="text" name="date" id="date" placeholder="09-21" >
                         <span class="error"></span>
                         <div class="erro"></div>
                     </div>
                     <div class="input-line">
                         <label for="cvc">CVC</label>
-                        <input type="text" name="cvc" id="cvc" placeholder="***" required>
+                        <input type="text" name="cvc" id="cvc" placeholder="***" >
                         <span class="error"></span>
                         <div class="erro"></div>
                     </div>
@@ -67,11 +69,12 @@
                 </div>
 
                  
-            </form>
+            
             
         </div>
-        <button class="button" type="submit">Complete purchase</button>
-        <!--
+        <button class="button" action="checkform" method="post">Complete purchase</button>
+    </form>
+        
 <div class="box">
                     
                 </div>
@@ -86,8 +89,8 @@
                     </div>
                 </div><br><br>
 
-        -->
-  
-<script defer src="/js/checkout.js"></script>
+        
+
+
                 <%- include('../partials/footer') %>
     </body>            
