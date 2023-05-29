@@ -47,7 +47,7 @@ import terms_router from "./routers/terms&condition.js";
 import wardrobe_router from "./routers/wardrobe.js";
 import wish_router from "./routers/wishlist.js";
 import checkroute_router from "./routers/checkroute.js"
-
+import logroute_router from "./routers/logroute.js"
 
 
 
@@ -90,8 +90,8 @@ app.use(express.static(path.join(__dirname, 'public')));
  app.use('/terms&condition', terms_router);
  app.use('/wardrobe', wardrobe_router);
  app.use('/wishlist', wish_router);
- app.use("/checkform",checkroute_router);
-
+ app.use('/checkform',checkroute_router);
+ app.use('/logform',logroute_router);
 
  /*
   app.get('/add',(req,res)=>{
