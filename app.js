@@ -140,6 +140,7 @@ app.get('/add',(req,res)=>{
 });
 
 */
+/*
 app.get('/addProduct',(req,res)=>{
   const products =new prod({
     image:"rana",
@@ -168,7 +169,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('pages/error');
 });
-
+*/
 
 
 export default app;
