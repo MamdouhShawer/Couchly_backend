@@ -112,8 +112,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   .catch(err=>{
     console.log(err);
   });*/
-});
-*/
+
 /*
 app.get('/add',(req,res)=>{
   //const signup =new Signup(req.body)
