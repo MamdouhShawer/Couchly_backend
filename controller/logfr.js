@@ -1,9 +1,10 @@
-import log from "../models/logform.js"
+ 
+import login from "../models/loginn.js"
 
 const logform= async (req,res)=>{
     
 
-    const l = new log ({
+    const l = new login ({
         email: req.body.email,
         password: req.body.password,
       });
