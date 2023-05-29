@@ -1,12 +1,12 @@
 import {Router} from 'express';
 
-import logform from '../controller/chckout.js';
+import logform from '../controller/logfr.js';
 const router=Router();
-router.post('/',checkform)
+router.post('/',logform)
 
 /* GET /about/test page. */
 router.get('/', function(req, res) {
-    res.render('pages/checkout',{title:'Complete your purchase'});
+    res.render('pages/login',{title:'login form'});
   });
 
 export default router;
