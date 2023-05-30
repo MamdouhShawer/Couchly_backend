@@ -48,7 +48,6 @@ CVC:{
 
 //hashing the card number and cvc
 checkSchmea.pre('save',async function(next){
-    this.CardNum = this.CardNum.toString();
     const salt=await bcrypt.genSalt();
     this.CardNum=await bcrypt.hash(this.CardNum,salt);
     this.CVC=await bcrypt.hash(this.CVC,salt);
