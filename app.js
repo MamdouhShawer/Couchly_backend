@@ -49,6 +49,7 @@ import wish_router from "./routers/wishlist.js";
 import checkroute_router from "./routers/checkroute.js"
 import logroute_router from "./routers/logroute.js"
 import api_router from "./routers/api.js"
+import desc_router from "./routers/description.js"
 
 
 
@@ -92,7 +93,8 @@ app.use(express.static(path.join(__dirname, 'public')));
  app.use('/wishlist', wish_router);
  app.use('/checkform',checkroute_router);
  app.use('/logform',logroute_router);
- app.use('/api',api_router)
+ app.use('/api',api_router);
+ app.use('/description',desc_router);
 
  /*
   app.get('/add',(req,res)=>{
