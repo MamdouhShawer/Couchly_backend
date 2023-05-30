@@ -3,9 +3,9 @@ import {Router} from 'express';
 const router=Router();
 
 router.get('/',function(req,res){
-    console.log('login.js: GET /login');
+    console.log('api.js: GET /api');
 
-    res.render('pages/login',{title:'login form'});
+    res.render('pages/api',{title:'map'});
 });
 
 export default router;
