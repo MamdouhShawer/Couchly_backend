@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 const Schema=mongoose.Schema;
+
 
 const checkSchmea=new Schema({
 FirstName:{
@@ -13,6 +15,8 @@ LastName:{
 phoneNum:{
     type:Number,
     required:true,
+    unique:true,
+    minlength:[11,'Please enter a valid phone number'],
 },
 Adress:{
     type: String,
@@ -21,20 +25,36 @@ Adress:{
 CardName:{
     type: String,
     required: true,
+    unique:true,
 },
 CardNum:{
-    type: Number,
+    type: String,
     required: true,
+    unique:true,
+    minlength:[16,'Please enter a valid card number'],
 },
 ExpDate:{
-    type:Date,
+    type:String,
     required:true,
 },
 CVC:{
-    type: Number,
+    type: String,
     required: true,
+    unique:true,
+    minlength:[3,'Please enter a valid CVC'],
 },
 },{timestamps:true});
+
+
+//hashing the card number and cvc
+checkSchmea.pre('save',async function(next){
+    this.CardNum = this.CardNum.toString();
+    const salt=await bcrypt.genSalt();
+    this.CardNum=await bcrypt.hash(this.CardNum,salt);
+    this.CVC=await bcrypt.hash(this.CVC,salt);
+    next();
+
+});
 
 const check=mongoose.model('Checkout',checkSchmea);
 export default check;
