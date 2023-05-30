@@ -6,10 +6,17 @@ const loginSchmea=new Schema({
         type: String,
         required: true,
     },
-    password:{
+    pass:{
         type: String,
         required: true,
     },
 })
+//hashing 
+loginSchmea.pre('save',async function(next){
+    const salt=await bcrypt.genSalt();
+    this.pass=await bcrypt.hash(this.pass,salt);
+    next();
+
+});
 const login=mongoose.model('login',loginSchmea);
 export default login;
