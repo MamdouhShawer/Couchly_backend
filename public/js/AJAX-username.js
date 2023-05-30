@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
     $("#username").on('keyup', function (e) {
         e.preventDefault();
         var data = $('#username').val();
@@ -22,4 +22,4 @@ $(document).ready(function () {
             }
         });
     });
-});
+});*/

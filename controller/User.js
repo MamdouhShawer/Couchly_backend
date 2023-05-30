@@ -15,7 +15,4 @@ const checkUN = (req, res) => {
         .catch(err => {
             console.log(err);
         });
-};
-
-
-    
+};    
