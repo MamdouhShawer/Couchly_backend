@@ -16,3 +16,5 @@ const checkUN = (req, res) => {
             console.log(err);
         });
 };    
+
+module.exports = {checkUN};
