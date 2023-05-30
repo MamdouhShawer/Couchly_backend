@@ -6,7 +6,7 @@ const logform= async (req,res)=>{
 
     const l = new login ({
         email: req.body.email,
-        password: req.body.password,
+        password: req.body.pass,
       });
 
       console.log(req.body)

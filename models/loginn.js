@@ -11,5 +11,5 @@ const loginSchmea=new Schema({
         required: true,
     },
 })
-const login=mongoose.model("login",loginSchmea)
-export default login
+const login=mongoose.model('login',loginSchmea);
+export default login;
