@@ -6,10 +6,34 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<title><%= title %></title>
+	<link rel="stylesheet" href="../css/dashboard.css">
+	<title><%=title%></title>
 </head>
 <body>
     <%- include('../partials/adminNav') %>
+
+    <!-- Sidebar -->
+    <!-- CONTENT -->
+    <section id="content">
+        <!-- NavBar -->
+        <nav>
+            <i class='bx bx-menu' ></i>
+            <a href="#" class="nav-link">Categories</a>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search....">
+                    <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+                </div>
+            </form>
+            <a href="#" class="notification">
+                <i class='bx bxs-bell' ></i>
+                <span class="num">8</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="../../imgs/Ahmed.jpg" alt="">
+            </a>
+        </nav>
+        <!-- NavBar -->
 	<!-- MAIN -->
         <main>
             <div class="head-title">
