@@ -52,7 +52,7 @@ import checkroute_router from "./routers/checkroute.js"
 import logroute_router from "./routers/logroute.js"
 import api_router from "./routers/api.js"
 import desc_router from "./routers/description.js"
-
+import dash_router from "./routers/dashboard.js"
 
 
 // Read the current directory name
@@ -97,6 +97,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  app.use('/logform',logroute_router);
  app.use('/api',api_router);
  app.use('/description',desc_router);
+ app.use('/dashboard',dash_router);
 
  /*
   app.get('/add',(req,res)=>{
