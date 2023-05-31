@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import logger from "morgan";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
+import session from "express-session"
 import Users from './models/user.js';
 import prod from './models/products.js'
 const dburi="mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?retryWrites=true&w=majority";
@@ -15,7 +16,7 @@ const dburi="mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?r
 .catch(console.log("Connecting to database...."));*/
 
 const app = express();
-
+app.use(session({ secret: 'Your_Secret_Key' }));
 
 mongoose.connect(dburi, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(result => app.listen(8080,(req,res)=>{
@@ -51,7 +52,8 @@ import checkroute_router from "./routers/checkroute.js"
 import logroute_router from "./routers/logroute.js"
 import api_router from "./routers/api.js"
 import desc_router from "./routers/description.js"
-
+import dash_router from "./routers/dashboard.js"
+import addProd_router from "./routers/addProduct.js"
 
 
 // Read the current directory name
@@ -96,6 +98,8 @@ app.use(express.static(path.join(__dirname, 'public')));
  app.use('/logform',logroute_router);
  app.use('/api',api_router);
  app.use('/description',desc_router);
+ app.use('/dashboard',dash_router);
+ app.use('/addProduct',addProd_router);
 
  /*
   app.get('/add',(req,res)=>{
@@ -174,6 +178,15 @@ app.use(function(err, req, res, next) {
   res.render('pages/error');
 });
 */
+
+//session
+app.get('/', (req, res) => {
+  res.render('index', { user: (req.session.user === undefined ? "" : req.session.user) });
+});
+
+app.get('/login', (req, res) => {
+  res.render('login', { user: (req.session.user === undefined ? "" : req.session.user) });
+});
 
 
 export default app;
