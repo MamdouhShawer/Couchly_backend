@@ -5,6 +5,7 @@ import logger from "morgan";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import session from "express-session"
+import fileUpload from 'express-fileupload';
 import Users from './models/user.js';
 import prod from './models/products.js'
 const dburi="mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?retryWrites=true&w=majority";
@@ -26,6 +27,7 @@ mongoose.connect(dburi, { useNewUrlParser: true, useUnifiedTopology: true })
  
 
  app.use(express.urlencoded({ extended: true }));
+
 
 
 //import routers
@@ -54,6 +56,7 @@ import api_router from "./routers/api.js"
 import desc_router from "./routers/description.js"
 import dash_router from "./routers/dashboard.js"
 import addProd_router from "./routers/addProduct.js"
+import product_router from "./routers/products_route.js"
 
 
 // Read the current directory name
@@ -73,6 +76,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileUpload());
 
 
  app.use('/', index_router);
@@ -100,6 +104,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  app.use('/description',desc_router);
  app.use('/dashboard',dash_router);
  app.use('/addProduct',addProd_router);
+ app.use('/prodform',product_router);
 
  /*
   app.get('/add',(req,res)=>{
