@@ -1,4 +1,4 @@
-const user = require('../models/user');
+import { user } from '../models/user';
 
 
 const checkUN = (req, res) => {
@@ -17,4 +17,4 @@ const checkUN = (req, res) => {
         });
 };    
 
-module.exports = {checkUN};
+export default {checkUN};
