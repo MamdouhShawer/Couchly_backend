@@ -13,6 +13,9 @@ const logform= async (req,res)=>{
    l.save()
     .then( result => {
         res.redirect("/")
+        
+        req.session.user = result[0];
+
     })
     .catch( err => {
         console.log(err)

@@ -17,49 +17,49 @@
             <div class="centered">
 
               <div class="package">
-             <form class="form" id="form">
+             
              <span class="Register">Register</span>
-          <form action="*"> 
+          <form  class="form" id="regform" action="regform" method="post"> 
            <div class="Registeration"> 
             <div class="inputControl">
                 <i class="uil uil-user"></i>
-            <input type="text" placeholder="first name"  id="first">
+            <input type="text" placeholder="first name" name="first" id="first">
             <span class="error"></span>
             </div>
 
             <div class="inputControl">
                 <i class="uil uil-angle-right"></i>
-            <input type="text" placeholder="Last name" id="last">
+            <input type="text" placeholder="Last name" name="last" id="last">
             <span class="error"></span>
             </div>
 
             <div class="inputControl">
                 <i class="uil uil-angle-right"></i>
-                <input type="text" placeholder="UserName" id="username">
+                <input type="text" placeholder="UserName" name="un" id="username">
                 <span class="error"></span>
                 </div>
             
                 <div class="inputControl">
                     <i class="uil uil-envelope"></i>
-                    <input type="text" placeholder="Email" id="email">
+                    <input type="text" placeholder="Email" name="email" id="email">
                     <span class="error"></span>
                     <div class="erro"></div>
                     </div>
             
                     <div class="inputControl">
                        <i class="uil uil-lock"></i>
-                     <input type="password" placeholder="Password" id="pass">
+                     <input type="password" placeholder="Password" name="pass" id="pass">
                      <span class="error"></span>
                      <div class="erro" ></div>
                     </div>
            
             <div class="inputControl">
                     <i class="uil uil-corner-down-right-alt"></i>
-                   <input type="password" placeholder="Confirm Password" id="pass2">
+                   <input type="password" placeholder="Confirm Password" name="Cpass" id="pass2">
                    <span class="error"></span>
                    <div class="erro"></div>
                </div>
-               <button class="button" type="submit">Register</button>
+               <button class="button" type="submit" method="post"  action="regform">Register</button>
                <a href="login.html">
                    <button class="button1" type="button">Back</button>
                 </a>

@@ -32,5 +32,5 @@ type:{
 },
 },{timestamps:true});
 
-const Users=mongoose.model('Users',usersSchmea);
+const Users=mongoose.model('User',usersSchmea);
 export default Users;
