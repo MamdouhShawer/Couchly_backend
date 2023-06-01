@@ -17,7 +17,7 @@ const dburi="mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?r
 .catch(console.log("Connecting to database...."));*/
 
 const app = express();
-app.use(session({ secret: 'Your_Secret_Key' }));
+
 
 mongoose.connect(dburi, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(result => app.listen(8080,(req,res)=>{
@@ -25,8 +25,6 @@ mongoose.connect(dburi, { useNewUrlParser: true, useUnifiedTopology: true })
   }))
   .catch(console.log("Connecting to database...."));
  
-
- app.use(express.urlencoded({ extended: true }));
 
 
 
@@ -77,7 +75,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
-
+app.use(express.urlencoded({ extended: true }));
+app.use(session({ secret: 'Your_Secret_Key' }));
 
  app.use('/', index_router);
  app.use('/shop', shop_router);
@@ -185,11 +184,11 @@ app.use(function(err, req, res, next) {
 */
 
 //session
-app.get('/', (req, res) => {
+app.get('/', (req, res,next) => {
   res.render('index', { user: (req.session.user === undefined ? "" : req.session.user) });
 });
 
-app.get('/login', (req, res) => {
+app.get('/login', (req, res,next) => {
   res.render('login', { user: (req.session.user === undefined ? "" : req.session.user) });
 });
 
