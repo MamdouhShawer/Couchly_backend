@@ -25,7 +25,6 @@ Adress:{
 CardName:{
     type: String,
     required: true,
-    unique:true,
 },
 CardNum:{
     type: String,

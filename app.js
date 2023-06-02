@@ -57,7 +57,7 @@ import addProd_router from "./routers/addProduct.js"
 import product_router from "./routers/products_route.js"
 import regroute_router from"./routers/regroute.js"
 import signin_router from"./routers/signin.js"
-
+import profile_router from "./routers/profile.js"
 
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -108,6 +108,8 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/prodform',product_router);
  app.use('/regform',regroute_router);
  app.use('/signinform',signin_router);
+ app.use('/profile',profile_router);
+
 
  /*
   app.get('/add',(req,res)=>{
