@@ -59,6 +59,7 @@ import reg_router from "./routers/rgestration.js";
 import signin_router from"./routers/signin.js"
 import profile_router from "./routers/profile.js"
 
+
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -78,7 +79,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
-app.use(session({ secret: 'Your_Secret_Key' }));
+//app.use(session({ secret: 'Your_Secret_Key' }));
 
  app.use('/', index_router);
  app.use('/shop', shop_router);
@@ -131,7 +132,25 @@ app.use(session({ secret: 'Your_Secret_Key' }));
   .catch(err=>{
     console.log(err);
   });*/
-
+  app.get('/add',(req,res)=>{
+    const user=new Users({
+      Firstname:"Mamdouh",
+      Lastname:"SHAWER",
+      Username:"Ayhaga",
+      email:"mamdouh@gmail.com",
+      password:"123",
+      image:"mamdouh",
+      type:"admin"
+    });
+  
+    user.save()
+      .then(result=>{
+        res.send(result);
+      })
+      .catch(err=>{
+        console.log(err);
+      });
+  });
 
 /*
 app.get('/add',(req,res)=>{

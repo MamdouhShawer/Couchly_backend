@@ -1,5 +1,5 @@
 import {Router} from 'express';
-
+import User from "../controller/User.js";
 const router=Router();
 
 router.get('/',function(req,res){
@@ -9,4 +9,5 @@ router.get('/',function(req,res){
 
 });
 
+router.post('/checkUN',User.checkUN);
 export default router;

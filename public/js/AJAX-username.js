@@ -3,7 +3,7 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $('#username').val();
         $.ajax({
-            url: '/user/checkUN',
+            url: '/rgestration/checkUN',
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ UserName: data }),

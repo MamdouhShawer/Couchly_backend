@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
-const Schema=mongoose.Schema;
+import { Schema as _Schema, model } from 'mongoose';
+
+const Schema=_Schema;
 
 const usersSchmea=new Schema({
 Firstname:{
@@ -22,15 +23,16 @@ password:{
     type: String,
     required: true,
 },
-confirmPassword:{
-    type:String,
-    required:true,
-},
 type:{
     type: String,
     required: true,
 },
 },{timestamps:true});
 
-const Users=mongoose.model('User',usersSchmea);
+
+const Users=newFunction();
 export default Users;
+
+function newFunction() {
+    return model('Users', usersSchmea);
+}

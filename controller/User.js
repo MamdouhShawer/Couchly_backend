@@ -1,7 +1,8 @@
-import { user } from '../models/user';
+import user from '../models/user.js';
 
 
-const checkUN = (req, res) => {
+
+function checkUN(req, res) {
     var query = { Username: req.body.UserName };
     user.find(query)
         .then(result => {
@@ -15,6 +16,6 @@ const checkUN = (req, res) => {
         .catch(err => {
             console.log(err);
         });
-};    
+}    
 
-export default {checkUN};
+export default{checkUN};
