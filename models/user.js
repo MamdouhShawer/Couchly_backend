@@ -29,5 +29,10 @@ type:{
 },
 },{timestamps:true});
 
-const Users=mongoose.model('User',usersSchmea);
+
+const Users=newFunction();
 export default Users;
+
+function newFunction() {
+    return model('Users', usersSchmea);
+}

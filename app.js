@@ -79,7 +79,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
-app.use(session({ secret: 'Your_Secret_Key' }));
+//app.use(session({ secret: 'Your_Secret_Key' }));
 
  app.use('/', index_router);
  app.use('/shop', shop_router);
