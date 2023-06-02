@@ -43,7 +43,6 @@ import kitchens_router from "./routers/kitchens.js";
 import Lshape_router from "./routers/L-shape.js";
 import Login_router from "./routers/login.js";
 import priv_router from "./routers/privacyPolicy.js";
-import reg_router from "./routers/rgestration.js";
 import sale_router from "./routers/sale.js";
 import terms_router from "./routers/terms&condition.js";
 import wardrobe_router from "./routers/wardrobe.js";
@@ -56,6 +55,7 @@ import dash_router from "./routers/dashboard.js"
 import addProd_router from "./routers/addProduct.js"
 import product_router from "./routers/products_route.js"
 import regroute_router from"./routers/regroute.js"
+import reg_router from "./routers/rgestration.js";
 import signin_router from"./routers/signin.js"
 import profile_router from "./routers/profile.js"
 
@@ -94,7 +94,7 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/L-shape', Lshape_router);
  app.use('/login', Login_router);
  app.use('/privacyPolicy', priv_router);
- app.use('/rgestration', reg_router);
+ 
  app.use('/sale', sale_router);
  app.use('/terms&condition', terms_router);
  app.use('/wardrobe', wardrobe_router);
@@ -107,6 +107,7 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/addProduct',addProd_router);
  app.use('/prodform',product_router);
  app.use('/regform',regroute_router);
+ app.use('/rgestration', reg_router);
  app.use('/signinform',signin_router);
  app.use('/profile',profile_router);
 

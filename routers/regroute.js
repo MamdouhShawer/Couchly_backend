@@ -1,12 +1,15 @@
-import {Router} from 'express';
+import { Router } from 'express';
+import  regform  from '../controller/reg.js'
 
-import regform from '../controller/reg.js';
-const router=Router();
-router.post('/',regform)
 
-/* GET /about/test page. */
-router.get('/', function(req, res) {
-    res.render('pages/index',{title:'Regestration'});
+const router = Router();
+
+router.post("/",regform)
+
+
+
+router.get('/rgestration', function(req, res, next) {
+    res.send('Test Route');
   });
 
-export default router;
+  export default router
