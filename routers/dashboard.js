@@ -1,11 +1,11 @@
-import {Router} from 'express';
+import { Router } from "express";
 
-const router=Router();
+const router = Router();
 
-router.get('/',function(req,res){
-    console.log('dashboard.js: GET /dashboard');
+router.get("/", function (req, res) {
+  console.log("dashboard.js: GET /dashboard");
 
-    res.render('pages/dashboard',{title:'Couchly | Dashboard',});
+  res.render("pages/dashboard", { title: "Couchly | Dashboard" });
 });
 
 export default router;

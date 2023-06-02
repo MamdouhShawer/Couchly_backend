@@ -1,11 +1,11 @@
-import {Router} from 'express';
+import { Router } from "express";
 
-const router=Router();
+const router = Router();
 
-router.get('/',function(req,res){
-    console.log('addProduct.js: GET /addProduct');
+router.get("/", function (req, res) {
+  console.log("addProduct.js: GET /addProduct");
 
-    res.render('pages/addProduct',{title:'Couchly | Add product',});
+  res.render("pages/addProduct", { title: "Couchly | addProduct" });
 });
 
 export default router;

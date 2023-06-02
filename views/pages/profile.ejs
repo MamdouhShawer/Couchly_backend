@@ -1,0 +1,12 @@
+<head>
+    <link rel="stylesheet" href="../css/footer.css">
+    <title>My profile</title>
+</head>
+<body>
+<%- include("../partials/nav.ejs") %>
+
+<h1>Hello <%= user.Username %></h1>
+<a href="/index"><button>Logout</button></a>
+<%- include("../partials/footer.ejs") %>
+
+</body>

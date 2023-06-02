@@ -34,7 +34,7 @@
     <div class="container">
         <header>Add Product </header>
 
-<form id="form" action="/">
+<form id="form" action="prodform" method="post">
   <div class="form first">
     <div class="product details">
     <div class="fields">
@@ -54,17 +54,18 @@
           <div class="error"></div>
         </div>
     <div class="label-field">
-      <label for="input">Available Quantity</label>
-    </div>
-    <div class="input-field">
-            <input id="AvailableQuantity" type ="number" name="AvailableQuantity" placeholder="" >
+        <div class="label-field">
+            <label for="input">Quantity</label>
+           </div>
+          <div class="input-field">
+            <input id="quantity" type ="text" name="quantity" placeholder="">
             <div class="error"></div>
-    </div>
+          </div>
     <div class="label-field">
       <label for="input">Main Price</label>
     </div>
     <div class="input-field">
-            <input id="MainPrice" type ="number" name="MainPrice"  placeholder="" >
+            <input id="MainPrice" type ="number" name="price"  placeholder="" >
             <div class="error"></div>
     </div>
   </div>
@@ -73,19 +74,19 @@
       <label for="input">Product Description</label>
     </div>
     <div class="input-field">
-         <textarea id="ProductDescription"class="form-control" name="ProductDescription" placeholder="" ></textarea>
+         <textarea id="ProductDescription"class="form-control" name="description" placeholder="" ></textarea>
          <div class="error"></div>
     </div>
-    <div class="label-field">
-      <label for="input">Main image</label> 
+  <div class="label-field">
+    <label for="Image">Image</label>
   </div>
-    <div class="input-field">
-         <input id="Mainimage" type ="file" name="Mainimage" placeholder="" >
-         <div class="error"></div>
-    </div>
+  <div class="input-field">
+       <input type="file" name="image" />
+       <div class="error"></div>
+  </div>
     </div>
   </div >
-  <button class="add-btn">Add</button>
+  <button class="button" action="prodform" method="post">Add</button>
   </div>
   </div>
   </form>

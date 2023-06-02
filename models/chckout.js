@@ -6,7 +6,7 @@ const Schema=mongoose.Schema;
 const checkSchmea=new Schema({
 FirstName:{
     type: String,
-    required: true,
+   required: true,
 },
 LastName:{
     type: String,
@@ -14,8 +14,8 @@ LastName:{
 },
 phoneNum:{
     type:Number,
-    required:true,
-    unique:true,
+   required:true,
+   unique:true,
     minlength:[11,'Please enter a valid phone number'],
 },
 Adress:{
@@ -25,7 +25,6 @@ Adress:{
 CardName:{
     type: String,
     required: true,
-    unique:true,
 },
 CardNum:{
     type: String,

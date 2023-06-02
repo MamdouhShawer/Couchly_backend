@@ -15,15 +15,29 @@
                     <span>
                         <li><a href="/about">About</a></li>
                     </span>
-                    <span>
+                    <% if(user===""){%>
+                     <span>
                         <li><a href="/login">Log in</a></li>
                     </span> 
-                    <span>
+                <%}else{
+                    if(user.type!=="")
+                    {
+                        %>
+                        <span>
                         <li><a href="/wishlist">Wishlist</a></li>
                     </span>
                     <span>
                         <li><a href="/cart">Cart</a></li>
                     </span>
+                    <span>
+                        <li><a href="/profile">Profile</a></li>
+                    </span>
+                    <%}%>
+
+                <%}%>
+                   
+
+                    
                     </div>
                 </ul>
             </div>
