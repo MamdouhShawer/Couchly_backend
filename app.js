@@ -56,6 +56,7 @@ import dash_router from "./routers/dashboard.js"
 import addProd_router from "./routers/addProduct.js"
 import product_router from "./routers/products_route.js"
 import regroute_router from"./routers/regroute.js"
+import signin_router from"./routers/signin.js"
 
 
 // Read the current directory name
@@ -106,7 +107,7 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/addProduct',addProd_router);
  app.use('/prodform',product_router);
  app.use('/regform',regroute_router);
-
+ app.use('/signinform',signin_router);
 
  /*
   app.get('/add',(req,res)=>{
