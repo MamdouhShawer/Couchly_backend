@@ -1,5 +1,5 @@
 import {Router} from 'express';
-
+import User from "../controller/User.js";
 const router=Router();
 
 router.get('/',function(req,res){
@@ -8,4 +8,5 @@ router.get('/',function(req,res){
     res.render('pages/rgestration',{title:'Couchly | Registeration',});
 });
 
+router.post('/checkUN',User.checkUN);
 export default router;

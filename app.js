@@ -56,6 +56,7 @@ import dash_router from "./routers/dashboard.js"
 import addProd_router from "./routers/addProduct.js"
 
 
+
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -120,7 +121,25 @@ app.use(express.static(path.join(__dirname, 'public')));
   .catch(err=>{
     console.log(err);
   });*/
-
+  app.get('/add',(req,res)=>{
+    const user=new Users({
+      Firstname:"Mamdouh",
+      Lastname:"SHAWER",
+      Username:"Ayhaga",
+      email:"mamdouh@gmail.com",
+      password:"123",
+      image:"mamdouh",
+      type:"admin"
+    });
+  
+    user.save()
+      .then(result=>{
+        res.send(result);
+      })
+      .catch(err=>{
+        console.log(err);
+      });
+  });
 
 /*
 app.get('/add',(req,res)=>{
