@@ -1,9 +1,10 @@
 import {Router} from 'express';
 
-const router=Router();
+const router=Router();  
 
 router.get('/', function(req, res, next) {
-    res.render("pages/index",{ user: (req.session.user === undefined ? "" : req.session.user) });
+    const user = (req.session && req.session.user) ? req.session.user : '';
+    res.render('pages/index', { user: user });
 });
 
 export default router;
