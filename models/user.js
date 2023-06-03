@@ -1,4 +1,4 @@
-import { Schema as _Schema, model } from 'mongoose';
+import mongoose, { Schema as _Schema, model } from 'mongoose';
 
 const Schema=_Schema;
 

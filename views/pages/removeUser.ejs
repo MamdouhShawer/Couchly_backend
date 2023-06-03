@@ -7,69 +7,11 @@
     <title>Remove User</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="removeUser.css">
+    <link rel="stylesheet" href="/css/removeUser.css">
    
 </head>
 <body>
-    <section id="sidebar">
-        <a href="dashboard.html" class="brand">
-            <i class='bx bxs-smile'></i>
-            <span class="text">AdminHub</span>
-        </a>
-        <ul class="side-menu top">
-            <li class="active">
-                <a href="dashboard.html">
-                    <i class='bx bxs-dashboard'></i>
-                    <span class="text">Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="myStore.html">
-                    <i class='bx bxs-shopping-bag-alt' ></i>
-                    <span class="text">My Store</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-message-dots' ></i>
-                    <span class="text">Message</span>
-                </a>
-            </li>
-            <li>
-                <a href="addUser.html">
-                    <i class='bx bxs-user' ></i>
-                    <span class="text">Add User</span>
-                </a>
-            </li>
-            <li>
-                <a href="removeUser.html">
-                    <i class='bx bxs-user' ></i>
-                    <span class="text">Remove User</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-store-alt'></i>
-                    <span class="text">Add Product</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-store-alt'></i>
-                    <span class="text">Remove Product</span>
-                </a>
-            </li>
-        </ul>
-            <ul class="side-menu">
-                <li>
-                    <a href="#" class="logout">
-                        <i class='bx bxs-exit' ></i>
-                        <span>Logout</span>
-                    </a>
-                </li>
-            
-            </ul>
-    </section>
+    <%- include('../partials/adminNav') %>
 
     <section id="content">
 

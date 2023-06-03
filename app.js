@@ -52,12 +52,17 @@ import checkroute_router from "./routers/checkroute.js"
 import logroute_router from "./routers/logroute.js"
 import api_router from "./routers/api.js"
 import desc_router from "./routers/description.js"
-import dash_router from "./routers/dashboard.js"
-import addProd_router from "./routers/addProduct.js"
 import product_router from "./routers/products_route.js"
 import regroute_router from"./routers/regroute.js"
 import signin_router from"./routers/signin.js"
 import profile_router from "./routers/profile.js"
+import adduser_router from "./routers/addUser.js"
+import addProd_router from "./routers/addProduct.js"
+import dash_router from "./routers/dashboard.js"
+import removeuser_router from "./routers/removeUser.js"
+import mystore_router from "./routers/myStore.js"
+import salesadmin_router from "./routers/salesAdmin.js"
+
 
 
 // Read the current directory name
@@ -104,13 +109,16 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/logform',logroute_router);
  app.use('/api',api_router);
  app.use('/description',desc_router);
- app.use('/dashboard',dash_router);
- app.use('/addProduct',addProd_router);
  app.use('/prodform',product_router);
  app.use('/regform',regroute_router);
  app.use('/signinform',signin_router);
  app.use('/profile',profile_router);
-
+ app.use('/dashboard',dash_router);
+ app.use('/addProduct',addProd_router);
+ app.use('/adduser',adduser_router);
+ app.use('/mystore',mystore_router);
+ app.use('/removeuser',removeuser_router);
+ app.use('/saledadmin',salesadmin_router);
 
  /*
   app.get('/add',(req,res)=>{
@@ -206,8 +214,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('pages/error');
 });
-*/
 
+*/
 //session
 app.get('/', (req, res,next) => {
   res.render('index', { user: (req.session.user === undefined ? "" : req.session.user) });
