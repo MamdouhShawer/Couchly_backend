@@ -61,7 +61,7 @@ import addProd_router from "./routers/addProduct.js"
 import dash_router from "./routers/dashboard.js"
 import removeuser_router from "./routers/removeUser.js"
 import mystore_router from "./routers/myStore.js"
-import salesadmin_router from "./routers/salesAdmin.js"
+import salesAdmin_router from "./routers/salesAdmin.js"
 
 
 
@@ -119,7 +119,7 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/adduser',adduser_router);
  app.use('/mystore',mystore_router);
  app.use('/removeuser',removeuser_router);
- app.use('/saledadmin',salesadmin_router);
+ app.use('/salesAdmin',salesAdmin_router);
 
  /*
   app.get('/add',(req,res)=>{
