@@ -53,13 +53,17 @@ window.addEventListener("resize", function () {
   }
 });
 
+const addTodoButton = document.getElementById("addTodo");
+const todoList = document.querySelector(".todo-list");
+
+// Function to add a new todo item
 function addTodo() {
   const newTodo = document.createElement("li");
   newTodo.innerHTML = `
-      <input type="text" placeholder="Todo" />
-      <i class="bx bx-edit"></i>
-      <i class="bx bx-trash"></i>
-    `;
+    <input type="text" placeholder="Todo" />
+    <i class="bx bx-edit"></i>
+    <i class="bx bx-trash"></i>
+  `;
   todoList.appendChild(newTodo);
 }
 
