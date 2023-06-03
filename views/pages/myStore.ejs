@@ -50,72 +50,136 @@
                            <th>Quantity</th>
                            <th>Price</th>
                            <th>Description</th>
-                         <!--th>Image</th>
-                            <th>Action</th>-->  
+                           <th>Image</th>
+                           <th>Action</th>
                            
                             
                         </tr>
                     </thead>
                     
                     
-<% product.forEach(element=>{ %>
-      <tr>
-                        <td><%=element.name%></td>
-                           <td><%=element.category%></td>
-                           <td><%=element.quantity%></td>
-                           <td><%=element.price%></td>
-                           <td><%=element.description%></td>
-                     
-                       </tr>
-                  <%  }) %>
-                     
+            <% product.forEach(element=>{ %>
+    <tr>
+        <td><%=element.name%></td>
+        <td><%=element.category%></td>
+        <td><%=element.quantity%></td>
+        <td><%=element.price%></td>
+        <td><%=element.description%></td>
+        <td><img src="/imgs/<%=element.image%>"></td>
+        <td>
+            <button><i class='bx bxs-edit-alt' ></i></button>
+            <button><i class='bx bxs-trash' ></i></button>
+        </td>
+    </tr>
 
-                       <tr>
-                        <td>3</td>
-                        <td>
-                            <img src="couch.png" alt="">
-                        </td>
-                        <td>couch</td>
-                        <td>$2500</td>
-                        <td>out</td>
-                        <td>0</td>
-                        <td>
-                            <button><i class='bx bxs-edit-alt' ></i></button>
-                                <button><i class='bx bxs-trash' ></i></button>
-                        </td>
-                       </tr>
+     <%  }) %>
 
-                       <tr>
-                        <td>4</td>
-                        <td>
-                            <img src="bed.png" alt="">
-                        </td>
-                        <td>bed</td>
-                        <td>$2500</td>
-                        <td>in</td>
-                        <td>25</td>
-                        <td>
-                            <button><i class='bx bxs-edit-alt' ></i></button>
-                                <button><i class='bx bxs-trash' ></i></button>
-                        </td>
-                       </tr>
+     <% product1.forEach(element=>{ %>
+    <tr>
+        <td><%=element.name%></td>
+        <td><%=element.category%></td>
+        <td><%=element.quantity%></td>
+        <td><%=element.price%></td>
+        <td><%=element.description%></td>
+        <td><img src="/imgs/<%=element.image%>"></td>
 
-                       <tr>
-                        <td>5</td>
-                        <td>
-                            <img src="bed.png" alt="">
-                        </td>
-                        <td>bed</td>
-                        <td>$2500</td>
-                        <td>in</td>
-                        <td>25</td>
-                        <td>
-                            <button><i class='bx bxs-edit-alt' ></i></button>
-                                <button><i class='bx bxs-trash' ></i></button>
-                        </td>
-                       </tr>
-                    
-                </table>
+        <td>
+        <button><i class='bx bxs-edit-alt' ></i></button>
+         <button><i class='bx bxs-trash' ></i></button>
+        </td>
+         </tr>
+              
+        <%  }) %>
+        <% product2.forEach(element=>{ %>
+        <tr>
+        <td><%=element.name%></td>
+        <td><%=element.category%></td>
+        <td><%=element.quantity%></td>
+        <td><%=element.price%></td>
+        <td><%=element.description%></td>
+        <td><img src="/imgs/<%=element.image%>"></td>
+
+        <td>
+        <button><i class='bx bxs-edit-alt' ></i></button>
+        <button><i class='bx bxs-trash' ></i></button>
+        </td>
+        </tr>
+                              
+        <%  }) %>
+        <% product3.forEach(element=>{ %>
+        <tr>
+        <td><%=element.name%></td>
+        <td><%=element.category%></td>
+        <td><%=element.quantity%></td>
+        <td><%=element.price%></td>
+        <td><%=element.description%></td>
+        <td><img src="/imgs/<%=element.image%>"></td>
+
+        <td>
+        <button><i class='bx bxs-edit-alt' ></i></button>
+        <button><i class='bx bxs-trash' ></i></button>
+        </td>
+        </tr>                                      
+        <%  }) %>
+        <% product4.forEach(element=>{ %>
+        <tr>
+        <td><%=element.name%></td>
+        <td><%=element.category%></td>
+        <td><%=element.quantity%></td>
+        <td><%=element.price%></td>
+        <td><%=element.description%></td>
+        <td><img src="/imgs/<%=element.image%>"></td>
+        <td>
+        <button><i class='bx bxs-edit-alt' ></i></button>
+        <button><i class='bx bxs-trash' ></i></button>
+        </td>
+        </tr>                                                      
+        <%  }) %>
+        <% product5.forEach(element=>{ %>
+        <tr>
+        <td><%=element.name%></td>
+        <td><%=element.category%></td>
+        <td><%=element.quantity%></td>
+        <td><%=element.price%></td>
+        <td><%=element.description%></td>
+        <td><img src="/imgs/<%=element.image%>"></td>
+        <td>
+        <button><i class='bx bxs-edit-alt' ></i></button>
+        <button><i class='bx bxs-trash' ></i></button>
+        </td>
+        </tr>
+        
+        <%  }) %>
+        <% product6.forEach(element=>{ %>
+        <tr>
+        <td><%=element.name%></td>
+        <td><%=element.category%></td>
+        <td><%=element.quantity%></td>
+        <td><%=element.price%></td>
+        <td><%=element.description%></td>
+        <td><img src="/imgs/<%=element.image%>"></td>
+        <td>
+        <button><i class='bx bxs-edit-alt' ></i></button>
+        <button><i class='bx bxs-trash' ></i></button>
+        </td>
+        </tr>
+                                                                                              
+        <%  }) %>
+        <% product7.forEach(element=>{ %>
+        <tr>
+        <td><%=element.name%></td>
+        <td><%=element.category%></td>
+        <td><%=element.quantity%></td>
+        <td><%=element.price%></td>
+        <td><%=element.description%></td>
+        <td><img src="/imgs/<%=element.image %>"></td>
+        <td>
+        <button><i class='bx bxs-edit-alt' ></i></button>
+        <button><i class='bx bxs-trash' ></i></button>
+        </td>
+        </tr>
+        <%  }) %>
+       </table>
                 <div class="pagination">
                     <div><i class='bx bx-chevrons-left' ></i></div>
                     <div><i class='bx bx-chevron-left' ></i></div>
