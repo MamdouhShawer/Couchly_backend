@@ -17,8 +17,7 @@ li {
     --lato: 'Lato', sans-serif;
 
     --light: #F9F9F9;
-	--blue: rgb(0,109,91);
-	--light-blue: #CFE8FF;
+	--green: rgb(0,109,91);
 	--grey: #eee;
 	--dark-grey: #AAAAAA;
 	--dark: #342E37;
@@ -33,29 +32,27 @@ html {
     overflow-x: hidden;
 }
 
-body  {
+body {
     background: var(--grey);
     overflow-x: hidden;
 }
 
-
-
-/* SideBar */
+/* Sidebar */
 #sidebar {
     position: fixed;
-    top: 0 ;
-    left: 0 ;
+    top: 0;
+    left: 0;
     width: 280px;
     height: 100%;
     background: var(--light);
     z-index: 1000;
     font-family: var(--lato);
-    transition: .3 ease;
+    transition: .3s ease;
     overflow-x: hidden;
 }
 
 #sidebar.hide {
-    width:  60px;
+    width: 60px;
 }
 
 #sidebar .brand {
@@ -64,7 +61,7 @@ body  {
     height: 56px;
     display: flex;
     align-items: center;
-    color:rgb(0,109,91);
+    color: rgb(0, 109, 91);
     position: sticky;
     top: 0;
     left: 0;
@@ -91,15 +88,12 @@ body  {
     margin-left: 6px;
     border-radius: 48px 0 0 48px;
     padding: 4px;
-
 }
 
 #sidebar .side-menu li.active {
     background: var(--grey);
     position: relative;
 }
-
-
 
 #sidebar .side-menu li.active::before {
     content: '';
@@ -121,7 +115,7 @@ body  {
     border-radius: 50%;
     bottom: -40px;
     right: 0;
-    box-shadow: 20px -20px 0 rgb(0,109,91);
+    box-shadow: 20px -20px 0 rgb(0, 109, 91);
     z-index: -1;
 }
 
@@ -131,7 +125,7 @@ body  {
     background: var(--light);
     display: flex;
     align-items: center;
-    border-radius: 48px ;
+    border-radius: 48px;
     font-size: 16px;
     color: black;
     white-space: nowrap;
@@ -139,11 +133,10 @@ body  {
 }
 
 #sidebar .side-menu li.active a {
-    color: rgb(0,109,91);
-    
+    color: rgb(0, 109, 91);
 }
 
-#sidebar.hide .side-menu li a{
+#sidebar.hide .side-menu li a {
     width: calc(48px - (6px * 2));
     transition: width .3s ease;
 }
@@ -152,35 +145,32 @@ body  {
     color: var(--red);
 }
 
-#sidebar .side-menu.top li a :hover {
-    color: rgb(0,109,91);
-
+#sidebar .side-menu.top li a:hover {
+    color: rgb(0, 109, 91);
 }
 
 #sidebar .side-menu li a .bx {
     min-width: calc(60px - ((4px + 6px) * 2));
     display: flex;
     justify-content: center;
-    
 }
-/* SideBar */
 
+/* Sidebar */
 
-/* CONTENT */
+/* Content */
 #content {
     position: relative;
     width: calc(100% - 280px);
     left: 280px;
-    transition: .3 ease;
+    transition: .3s ease;
 }
 
 #sidebar.hide ~ #content {
     width: calc(100% - 60px);
-    left: 60px ;
+    left: 60px;
 }
 
-
-/* NAVBAR */
+/* Navbar */
 #content nav {
     height: 56px;
     background: var(--light);
@@ -208,7 +198,6 @@ body  {
 
 #content nav a {
     color: var(--dark);
-
 }
 
 #content nav .bx.bx-menu {
@@ -217,11 +206,11 @@ body  {
 
 #content nav .nav-link {
     font-size: 16px;
-    transition: .3 ease;
+    transition: .3s ease;
 }
 
 #content nav .nav-link:hover {
-    color: var(--blue);
+    color: var(--green);
 }
 
 #content nav form {
@@ -253,7 +242,7 @@ body  {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--blue);
+    background: var(--green);
     color: var(--light);
     font-size: 18px;
     border: none;
@@ -288,129 +277,187 @@ body  {
     height: 36px;
     object-fit: cover;
     border-radius: 50%;
-
 }
-/* NAVBAR */
-
 
 /* Form */
-
-.bodys {
- display: flex;
- align-items: center;
- justify-content: center;
- min-height: 100vh;
- padding-top: 20px;
+/* Form */
+/* Form */
+#content .bodys {
+    padding: 24px;
 }
 
-.container {
-    background-color: var(--light);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0,0.034),0 6.7px 5.3px rgba(0, 0, 0,0.048),0 12.8px 10.5px rgba(0, 0, 0,0.58);
+#content .bodys .container {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.header {
-    background: var(--blue);
-    padding: 20px 0;
-}
-
-.header h2 {
-    color: var(--grey);
+#content .bodys .header {
     text-align: center;
-    font-size: 26px;
-    text-transform: uppercase;
+    margin-bottom: 24px;
 }
 
-.form {
-    padding: 40px;
+#content .bodys .header h2 {
+    font-size: 24px;
+    color: var(--dark);
 }
 
-.form-control {
-    margin-bottom: 30px;
-    position: relative;
+#content .bodys .form {
+    background: var(--light);
+    padding: 24px;
+    border-radius: 8px;
 }
 
-.form-control label {
-    display: inline-block;
-    margin-bottom: 5px ;
-
+#content .bodys .form .form-control {
+    margin-bottom: 16px;
 }
 
-.form-control input {
-    width: 100%;
-    border: 2px solid var(--light);
-    font-size: 14px;
-    border-radius: 5px;
-    padding: 12px;
-}
-
-.form-control input:focus {
-    outline: 0;
-    border-color: var(--dark-grey);
-}
-
-.form-control.success input {
-    border-color: #39df7e;
-}
-
-.form-control.error input {
-    border-color: var(--red);
-}
-
-.form-control i {
-    position: absolute;
-    right: 10px;
-    top: 40px;
-    visibility: hidden;
-}
-
-.form-control.error small {
-    visibility: visible;
-}
-
-.form-control small {
-    color: var(--red);
-    position: absolute;
-    left: 0;
-    visibility: hidden;
-}
-
-.form-control.success i.bxs-check-circle {
-    color: #39df7e;
-    visibility: visible;
-}
-
-.form-control.error i.bxs-error-circle {
-    color: var(--red);
-    visibility: visible;
-}
-
-.form .btn {
-    background: var(--blue);
-    border-radius: 5px;
-    border: none;
-    outline: none;
+#content .bodys .form .form-control label {
     display: block;
     font-size: 16px;
-    padding: 15px 0;
-    margin-top: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+#content .bodys .form .form-control input[type="text"],
+#content .bodys .form .form-control input[type="email"],
+#content .bodys .form .form-control input[type="password"],
+#content .bodys .form .form-control select {
     width: 100%;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 4px;
+    border: 1px solid var(--dark-grey);
+    background: var(--light);
+    color: var(--dark);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.form .btn:hover {
-    background: #AAAAAA;
+#content .bodys .form .form-control input[type="file"] {
+    display: block;
+    margin-top: 8px;
 }
-/* Form */
 
+#content .bodys .form .form-control input[type="file"]::-webkit-file-upload-button {
+    border: none;
+    background: var(--green);
+    color: var(--light);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
 
+#content .bodys .form .form-control input[type="file"]::-webkit-file-upload-button:hover {
+    background: var(--dark-green);
+}
 
+#content .bodys .form .form-control input[type="text"]:focus,
+#content .bodys .form .form-control input[type="email"]:focus,
+#content .bodys .form .form-control input[type="password"]:focus,
+#content .bodys .form .form-control select:focus {
+    border-color: var(--green);
+}
 
+#content .bodys .form .form-control i {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    color: var(--dark-grey);
+    font-size: 24px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
-@media screen and (max-width: 768px){
+#content .bodys .form .form-control.success i.bxs-check-circle {
+    color: var(--green);
+    opacity: 1;
+}
+
+#content .bodys .form .form-control.error i.bxs-error-circle {
+    color: var(--red);
+    opacity: 1;
+}
+
+#content .bodys .form .form-control small {
+    color: var(--red);
+}
+
+#content .bodys .form .btn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 8px 16px;
+    background: green; 
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#content .bodys .form .btn:hover {
+    background: var(--dark-green);
+}
+
+#content .bodys .form .btn:disabled {
+    background: var(--grey);
+    cursor: not-allowed;
+}
+
+#content .bodys .form .btn:disabled:hover {
+    background: var(--grey);
+}
+
+#content .bodys .form .message {
+    margin-top: 16px;
+    text-align: center;
+}
+
+#content .bodys .form .message p {
+    font-size: 14px;
+    color: var(--dark-grey);
+}
+
+#content .bodys .form .message a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+#content .bodys .form .message a:hover {
+    text-decoration: underline;
+}
+
+.bx.bxs-check-circle.valid,
+.bx.bxs-error-circle.invalid {
+  display: none;
+}
+
+.form-control .bx.bxs-check-circle.valid,
+.form-control .bx.bxs-error-circle.invalid {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+
+/* Error Message Styles */
+.form-control small {
+  color: red;
+  display: none;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
     #sidebar {
         width: 200px;
     }
@@ -425,12 +472,11 @@ body  {
     }
 }
 
-
-
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
     #content nav form .form-input input {
         display: none;
     }
+
     #content nav form .form-input button {
         width: auto;
         height: auto;
@@ -443,177 +489,22 @@ body  {
         display: block;
         width: 100%;
     }
+
     #content nav form.show .form-input button {
         width: 36px;
         height: 100%;
         border-radius: 0 36px 36px 0;
+        background: var(--green);
         color: var(--light);
-        background: var(--red);
     }
 
-    #content nav form.show ~ .notification,#content nav form.show ~ .profile {
-        display: none;
-    }
-}
-/* Form */
-
-.bodys {
- display: flex;
- align-items: center;
- justify-content: center;
- min-height: 100vh;
- padding-top: 20px;
-}
-
-.container {
-    background-color: var(--light);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0,0.034),0 6.7px 5.3px rgba(0, 0, 0,0.048),0 12.8px 10.5px rgba(0, 0, 0,0.58);
-}
-
-.header {
-    background: var(--blue);
-    padding: 20px 0;
-}
-
-.header h2 {
-    color: var(--grey);
-    text-align: center;
-    font-size: 26px;
-    text-transform: uppercase;
-}
-
-.form {
-    padding: 40px;
-}
-
-.form-control {
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.form-control label {
-    display: inline-block;
-    margin-bottom: 5px ;
-
-}
-
-.form-control input {
-    width: 100%;
-    border: 2px solid var(--light);
-    font-size: 14px;
-    border-radius: 5px;
-    padding: 12px;
-}
-
-.form-control input:focus {
-    outline: 0;
-    border-color: var(--dark-grey);
-}
-
-.form-control.success input {
-    border-color: #39df7e;
-}
-
-.form-control.error input {
-    border-color: var(--red);
-}
-
-.form-control i {
-    position: absolute;
-    right: 10px;
-    top: 40px;
-    visibility: hidden;
-}
-
-.form-control.error small {
-    visibility: visible;
-}
-
-.form-control small {
-    color: var(--red);
-    position: absolute;
-    left: 0;
-    visibility: hidden;
-}
-
-.form-control.success i.bxs-check-circle {
-    color: #39df7e;
-    visibility: visible;
-}
-
-.form-control.error i.bxs-error-circle {
-    color: var(--red);
-    visibility: visible;
-}
-
-.form .btn {
-    background: var(--blue);
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    display: block;
-    font-size: 16px;
-    padding: 15px 0;
-    margin-top: 15px;
-    width: 100%;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.form .btn:hover {
-    background: #AAAAAA;
-}
-/* Form */
-
-
-
-
-
-@media screen and (max-width: 768px){
-    #sidebar {
-        width: 200px;
+    #content nav .notification {
+        font-size: 18px;
     }
 
-    #content {
-        width: calc(100% - 60px);
-        left: 200px;
-    }
-
-    #content nav .nav-link {
-        display: none;
-    }
-}
-
-
-
-@media screen and (max-width: 576px){
-    #content nav form .form-input input {
-        display: none;
-    }
-    #content nav form .form-input button {
-        width: auto;
-        height: auto;
-        background: transparent;
-        border-radius: none;
-        color: var(--dark);
-    }
-
-    #content nav form.show .form-input input {
-        display: block;
-        width: 100%;
-    }
-    #content nav form.show .form-input button {
-        width: 36px;
-        height: 100%;
-        border-radius: 0 36px 36px 0;
-        color: var(--light);
-        background: var(--red);
-    }
-
-    #content nav form.show ~ .notification,#content nav form.show ~ .profile {
-        display: none;
+    #content nav .profile img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
     }
 }
