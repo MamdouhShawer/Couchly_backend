@@ -516,6 +516,30 @@ body {
     margin-bottom: 0;
 }
 
+.todo-list li input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .bx-trash {
+    /* Add desired styles for the trash icon */
+    /* For example: */
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Styling for the edit icon */
+  .bx-edit {
+    /* Add desired styles for the edit icon */
+    /* For example: */
+    color: blue;
+    cursor: pointer;
+  }
+
+
 /* Main */
 /* CONTENT */
 
