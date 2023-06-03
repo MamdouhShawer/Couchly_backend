@@ -25,10 +25,7 @@ description:{
     required:true,
 
 },
-image:{
-    type:String,
-    required:true,
-}
+
 },{timestamps:true});
 const prod=mongoose.model("product",productSchema);
 export default prod;

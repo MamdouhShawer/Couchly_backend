@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 import session from "express-session"
 import fileUpload from 'express-fileupload';
 import Users from './models/user.js';
-import prod from './models/products.js'
+import prod from './models/products.js';
 const dburi="mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?retryWrites=true&w=majority";
 
 /*mongoose.connect(dburi)
@@ -100,7 +100,6 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/L-shape', Lshape_router);
  app.use('/login', Login_router);
  app.use('/privacyPolicy', priv_router);
- 
  app.use('/sale', sale_router);
  app.use('/terms&condition', terms_router);
  app.use('/wardrobe', wardrobe_router);
@@ -117,7 +116,7 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/dashboard',dash_router);
  app.use('/addProduct',addProd_router);
  app.use('/adduser',adduser_router);
- app.use('/mystore',mystore_router);
+ app.use('/myStore',mystore_router);
  app.use('/removeuser',removeuser_router);
  app.use('/salesAdmin',salesAdmin_router);
 

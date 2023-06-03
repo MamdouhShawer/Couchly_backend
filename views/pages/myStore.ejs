@@ -45,47 +45,30 @@
                 <table>
                     <thead>
                         <tr>
-                           <th>Serial number</th>
-                           <th>Product</th>
-                           <th>Product Name</th>
-                           <th>price</th>
-                           <th>Stock</th>
-                           <th>Stock no</th>
-                           <th>Action</th>
+                           <th>Product name</th>
+                           <th>Category</th>
+                           <th>Quantity</th>
+                           <th>Price</th>
+                           <th>Description</th>
+                         <!--th>Image</th>
+                            <th>Action</th>-->  
+                           
                             
                         </tr>
                     </thead>
-
-                    <tbody>
-                       <tr>
-                        <td>1</td>
-                        <td>
-                            <img src="chair.png" alt="">
-                        </td>
-                        <td>chair</td>
-                        <td>$2500</td>
-                        <td>in</td>
-                        <td>25</td>
-                        <td>
-                            <button><i class='bx bxs-edit-alt' ></i></button>
-                                <button><i class='bx bxs-trash' ></i></button>
-                        </td>
+                    
+                    
+<% product.forEach(element=>{ %>
+      <tr>
+                        <td><%=element.name%></td>
+                           <td><%=element.category%></td>
+                           <td><%=element.quantity%></td>
+                           <td><%=element.price%></td>
+                           <td><%=element.description%></td>
+                     
                        </tr>
-
-                       <tr>
-                        <td>2</td>
-                        <td>
-                            <img src="desk.png" alt="">
-                        </td>
-                        <td>desk</td>
-                        <td>$2500</td>
-                        <td>in</td>
-                        <td>25</td>
-                        <td>
-                            <button><i class='bx bxs-edit-alt' ></i></button>
-                                <button><i class='bx bxs-trash' ></i></button>
-                        </td>
-                       </tr>
+                  <%  }) %>
+                     
 
                        <tr>
                         <td>3</td>
@@ -131,7 +114,7 @@
                                 <button><i class='bx bxs-trash' ></i></button>
                         </td>
                        </tr>
-                    </tbody>
+                    
                 </table>
                 <div class="pagination">
                     <div><i class='bx bx-chevrons-left' ></i></div>
