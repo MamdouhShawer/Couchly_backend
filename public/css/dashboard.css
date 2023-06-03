@@ -498,6 +498,23 @@ body {
     border-left: 10px solid ;
 }
 
+#content main .table-data .todo .todo-list li.bx {
+    cursor: pointer;
+}
+
+#content main .table-data .todo .todo-list li.compeleted {
+    border-left: 10px solid var(--blue);
+}
+
+#content main .table-data .todo .todo-list li.not-compeleted {
+    border-left: 10px solid var(--orange);
+}
+
+
+
+#content main .table-data .todo .todo-list li:last-child {
+    margin-bottom: 0;
+}
 
 .todo-list li input {
     border: none;
@@ -522,19 +539,6 @@ body {
     cursor: pointer;
   }
 
-#content main .table-data .todo .todo-list li.compeleted {
-    border-left: 10px solid var(--blue);
-}
-
-#content main .table-data .todo .todo-list li.not-compeleted {
-    border-left: 10px solid var(--orange);
-}
-
-
-
-#content main .table-data .todo .todo-list li:last-child {
-    margin-bottom: 0;
-}
 
 /* Main */
 /* CONTENT */
