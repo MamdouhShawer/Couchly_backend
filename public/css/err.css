@@ -1,0 +1,19 @@
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    color:black
+}
+.container1{
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25); 
+    margin-left:18%;
+    margin-right: 18%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    display:grid;
+    
+}
