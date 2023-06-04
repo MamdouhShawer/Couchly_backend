@@ -120,6 +120,15 @@
 {
     color: #ff3860;
 }
+#firstname {
+    border-color: ff3860;
+  }
+  #firstname.empty {
+    border-color: ff3860;
+  }
+  #firstname.typed {
+    border-color: 09c372;
+  }
 .inputControl.success
 {
     color: #09c372;

@@ -119,7 +119,6 @@ app.use(session({ secret: 'Your_Secret_Key' }));
  app.use('/myStore',mystore_router);
  app.use('/removeuser',removeuser_router);
  app.use('/salesAdmin',salesAdmin_router);
-
  /*
   app.get('/add',(req,res)=>{
   const user=new Users({

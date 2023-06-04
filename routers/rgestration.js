@@ -8,6 +8,5 @@ router.get('/',function(req,res){
     res.render("pages/rgestration",{ user: (req.session.user === undefined ? "" : req.session.user) });
 
 });
-
 router.post('/checkUN',User.checkUN);
 export default router;

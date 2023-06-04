@@ -1,7 +1,6 @@
 import user from '../models/user.js';
 
 
-
 function checkUN(req, res) {
     var query = { Username: req.body.UserName };
     user.find(query)

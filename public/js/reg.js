@@ -5,6 +5,7 @@ const userName=document.getElementById('username');
 const email=document.getElementById('email');
 const password=document.getElementById('pass');
 const ConfirmPass=document.getElementById('pass2');
+const submitButton = document.getElementById('bt');
 
 const ValInput=()=>
 {
@@ -14,10 +15,12 @@ const ValInput=()=>
     const emailVal=email.value.trim();
     const passwordVal=password.value.trim();
     const ConfirmPassVal=ConfirmPass.value.trim();
+    let flag=true;
 
     if(fnameVal==='')
     {
         setError(firstName,'*');
+        flag=false;
     }
     else{
         setSuc(firstName);
@@ -26,6 +29,7 @@ const ValInput=()=>
     if(lnameVal==='')
     {
         setError(lastName,'*');
+        flag=false;
     }
     else{
         setSuc(lastName);
@@ -34,6 +38,7 @@ const ValInput=()=>
     if(userVAl==='')
     {
         setError(userName,'*');
+        flag=false;
     }
     else{
         setSuc(userName);
@@ -42,15 +47,18 @@ const ValInput=()=>
     if(emailVal==='')
     {
         setError(email,'*');
+        flag=false;
     }
     else if(!isValidEmail(emailVal)){
         setWordError(email,'Invalid email');
+        flag=false;
     }else{
         setSuccess(email);
     }
     if(passwordVal==='')
     {
         setError(password,'*');
+        flag=false;
     }
     else
     {
@@ -59,7 +67,7 @@ const ValInput=()=>
             setWordError(password,'Small password');
             if(!/[A-Z]/.test( passwordVal[0]))
             setWordError(password,'fisrt letter Must be upperCase');
-            
+            flag=false;
         }
             else 
             {
@@ -70,24 +78,22 @@ const ValInput=()=>
     if(ConfirmPassVal==='')
     {
         setError(ConfirmPass,'*');
+        flag=false;
     }
     else 
     {
         if(ConfirmPassVal!==passwordVal)
-        setWordError(ConfirmPass,'Passwords don\'t match');
+        {
+            flag=false;
+            setWordError(ConfirmPass,'Passwords don\'t match');
+        }
         else
         setSuccess(ConfirmPass)
     }
-   /* const user=new Users({
-        Firstname:"Mamdouh",
-        Lastname:"SHAWER",
-        Username:"Ayhaga",
-        email:"mamdouh@gmail.com",
-        password:"123",
-        image:"mamdouh",
-        type:"admin"
-      });
-      user.save();*/
+    if(flag==false)
+    submitButton.disable=true;
+    else
+    submitButton.disable
 }
 
 const isValidEmail = email=>

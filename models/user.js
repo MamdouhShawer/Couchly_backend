@@ -23,10 +23,6 @@ password:{
     type: String,
     required: true,
 },
-confirmPassword:{
-    type:String,
-    required:true,
-},
 type:{
     type: String,
     required: true,
