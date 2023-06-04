@@ -1,8 +1,10 @@
 import { Router } from "express";
 import Users from "../models/user.js";
+import deleteUser from "../controller/Removeuser.js";
+
 const router = Router();
 
-router.get("/", function (req, res) {
+router.get("/", (req, res) => {
   console.log("removeUser.js: GET /removeUser");
   Users.find()
     .then((result) => {
@@ -15,5 +17,8 @@ router.get("/", function (req, res) {
       console.log(err);
     });
 });
+
+// Add the route for deleteUser
+router.delete("/delete/:id", deleteUser);
 
 export default router;
