@@ -160,4 +160,12 @@
   #email.typed {
     border-color: #09c372;
   }
-
+  #pass {
+    border-color: #ff3860;
+  }
+  #pass.empty {
+    border-color: #ff3860;
+  }
+  #pass.typed {
+    border-color: #09c372;
+  }
