@@ -1,7 +1,7 @@
 import Users from "../models/user.js";
 
 const userForm = async (req, res) => {
-    console.log("UserForm AddU.js")
+  console.log("UserForm AddU.js");
   const reg = new Users({
     Firstname: req.body.Firstname,
     Lastname: req.body.Lastname,
