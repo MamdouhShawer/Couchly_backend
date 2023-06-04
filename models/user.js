@@ -40,3 +40,4 @@ export default Users;
 function newFunction() {
     return model('Users', usersSchmea);
 }
+

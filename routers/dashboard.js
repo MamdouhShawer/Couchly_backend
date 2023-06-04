@@ -1,11 +1,8 @@
 import { Router } from "express";
+import { showDashboard } from "../controller/dash.js";
 
 const router = Router();
 
-router.get("/", function (req, res) {
-  console.log("dashboard.js: GET /dashboard");
-
-  res.render("pages/dashboard", { title: "Couchly | Dashboard" });
-});
+router.get("/", showDashboard);
 
 export default router;

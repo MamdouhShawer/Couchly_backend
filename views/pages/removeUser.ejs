@@ -18,16 +18,14 @@
             deleteButtons.forEach((button) => {
                 button.addEventListener('click', async (e) => {
                     e.preventDefault();
-                    console.log('Delete button clicked'); // Add this line to debug
-
-                    // Find the button element in case the click event is triggered on the inner <i> element
+                    console.log('Delete button clicked'); 
                     const targetButton = e.target.closest('.delete-btn');
-                    targetButton.disabled = true; // Disable the button once it's clicked
+                    targetButton.disabled = true; 
                     const id = targetButton.getAttribute('data-id');
 
                     if (!id) {
                         alert('Error: User ID is not set.');
-                        targetButton.disabled = false; // Re-enable the button if there's an error
+                        targetButton.disabled = false; 
                         return;
                     }
 
@@ -44,7 +42,7 @@
                         }
                     } catch (error) {
                         alert(error.message);
-                        targetButton.disabled = false; // Re-enable the button if there's an error
+                        targetButton.disabled = false; 
                     }
                 });
             });

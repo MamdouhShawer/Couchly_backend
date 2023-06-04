@@ -9,7 +9,7 @@
 	<!-- My CSS -->
 	<link rel="stylesheet" href="../css/dashboard.css">
 	<title>
-		<%=title%>
+		<%= title %>
 	</title>
 </head>
 
@@ -62,14 +62,17 @@
 					<li>
 						<i class='bx bxs-calendar-check'></i>
 						<span class="text">
-							<h3>1020</h3>
+							<h3>2500</h3>
 							<p>New Order</p>
 						</span>
 					</li>
 					<li>
 						<i class='bx bxs-group'></i>
 						<span class="text">
-							<h3>2834</h3>
+							<h3>
+								<%= showDashboard %>
+							</h3>
+
 							<p>Visitors</p>
 						</span>
 					</li>
