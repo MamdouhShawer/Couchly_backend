@@ -63,6 +63,7 @@ import dash_router from "./routers/dashboard.js";
 import removeuser_router from "./routers/removeUser.js";
 import mystore_router from "./routers/myStore.js";
 import salesAdmin_router from "./routers/salesAdmin.js";
+import logout_router from "./routers/logout.js";
 
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -115,6 +116,10 @@ app.use(session({ secret: "Your_Secret_Key" }));
  app.use('/myStore',mystore_router);
  app.use('/removeuser',removeuser_router);
  app.use('/salesAdmin',salesAdmin_router);
+ app.use('/logout',logout_router);
+ app.use('/userForm',adduserroute_router);
+
+
  /*
   app.get('/add',(req,res)=>{
   const user=new Users({
