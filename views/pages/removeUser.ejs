@@ -10,38 +10,48 @@
 
     <link rel="stylesheet" href="/css/removeUser.css">
 
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const deleteButtons = document.querySelectorAll('.delete-btn');
-    
+
             deleteButtons.forEach((button) => {
                 button.addEventListener('click', async (e) => {
+                    e.preventDefault();
                     console.log('Delete button clicked'); // Add this line to debug
-                    const id = e.target.getAttribute('data-id');
-    
+
+                    // Find the button element in case the click event is triggered on the inner <i> element
+                    const targetButton = e.target.closest('.delete-btn');
+                    targetButton.disabled = true; // Disable the button once it's clicked
+                    const id = targetButton.getAttribute('data-id');
+
                     if (!id) {
                         alert('Error: User ID is not set.');
+                        targetButton.disabled = false; // Re-enable the button if there's an error
                         return;
                     }
-    
+
                     try {
                         const response = await fetch(`/removeUser/delete/${id}`, {
                             method: 'DELETE',
                         });
-    
+
                         if (response.status === 200) {
-                            e.target.closest('tr').remove();
+                            targetButton.closest('tr').remove();
                             alert('User deleted successfully');
                         } else {
                             throw new Error('Failed to delete user.');
                         }
                     } catch (error) {
                         alert(error.message);
+                        targetButton.disabled = false; // Re-enable the button if there's an error
                     }
                 });
             });
         });
     </script>
+
+
 
 </head>
 
@@ -137,7 +147,7 @@
 
 
 
-        <script src="dashboard.js"></script>
+        <script src="/public/js/dashboard.js"></script>
 </body>
 
 </html>

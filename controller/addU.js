@@ -16,7 +16,7 @@ const userForm = async (req, res) => {
   reg
     .save()
     .then((result) => {
-      res.redirect("/");
+      res.redirect("/removeUser");
     })
     .catch((err) => {
       console.log(err);
