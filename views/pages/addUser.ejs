@@ -12,101 +12,6 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="../css/addUser.css">
 
-
-    <script>
-        function validateForm() {
-            // Get the values from the form
-            var firstname = document.getElementById("firstname").value.trim();
-            var lastname = document.getElementById("lastname").value.trim();
-            var username = document.getElementById("username").value.trim();
-            var email = document.getElementById("email").value.trim();
-            var password = document.getElementById("password").value.trim();
-            var confirmpassword = document.getElementById("confirmpassword").value.trim();
-            var profileimage = document.getElementById("profileImage").value.trim();
-            var role = document.getElementById("role").value.trim();
-
-            // Validate the inputs
-            var hasErrors = false;
-            if (firstname === '') {
-                hasErrors = true;
-                document.getElementById("firstnameError").innerText = "First name is required";
-            } else {
-                document.getElementById("firstnameError").innerText = "";
-            }
-
-            if (lastname === '') {
-                hasErrors = true;
-                document.getElementById("lastnameError").innerText = "Last name is required";
-            } else {
-                document.getElementById("lastnameError").innerText = "";
-            }
-
-            if (username === '') {
-                hasErrors = true;
-                document.getElementById("usernameError").innerText = "Username is required";
-            } else {
-                document.getElementById("usernameError").innerText = "";
-            }
-
-            if (email === '') {
-                hasErrors = true;
-                document.getElementById("emailError").innerText = "Email is required";
-            } else if (!isValidEmail(email)) {
-                hasErrors = true;
-                document.getElementById("emailError").innerText = "Invalid email address";
-            } else {
-                document.getElementById("emailError").innerText = "";
-            }
-
-            if (password === '') {
-                hasErrors = true;
-                document.getElementById("passwordError").innerText = "Password is required";
-            } else if (password.length < 8) {
-                hasErrors = true;
-                document.getElementById("passwordError").innerText = "Password must be at least 8 characters";
-            } else {
-                document.getElementById("passwordError").innerText = "";
-            }
-
-            if (confirmpassword === '') {
-                hasErrors = true;
-                document.getElementById("confirmpasswordError").innerText = "Confirm password is required";
-            } else if (confirmpassword !== password) {
-                hasErrors = true;
-                document.getElementById("confirmpasswordError").innerText = "Passwords do not match";
-            } else {
-                document.getElementById("confirmpasswordError").innerText = "";
-            }
-
-            if (profileimage === '') {
-                hasErrors = true;
-                document.getElementById("profileImageError").innerText = "Profile image is required";
-            } else {
-                document.getElementById("profileImageError").innerText = "";
-            }
-
-            if (role === '') {
-                hasErrors = true;
-                document.getElementById("roleError").innerText = "Role is required";
-            } else {
-                document.getElementById("roleError").innerText = "";
-            }
-
-            // If there are errors, prevent the form from submitting
-            if (hasErrors) {
-                return false;
-            }
-
-            // If there are no errors, allow the form to submit
-            return true;
-        }
-
-        function isValidEmail(email) {
-            // Use a regular expression to validate the email address
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-    </script>
 </head>
 
 <body>
@@ -141,7 +46,7 @@
                         <h2>Add User Form</h2>
                     </div>
 
-                    <form action="/removeUser" method="post" class="form" id="form" onsubmit="return validateForm()">
+                    <form action="userForm" method="post" class="form" id="userForm" onsubmit="validateForm()">
                         <div class="form-control">
                             <label for="firstname">First Name</label>
                             <input type="text" id="firstname" name="Firstname" placeholder="Enter firstname" />
@@ -174,11 +79,6 @@
                             <span id="confirmpasswordError" class="error-message"></span>
                         </div>
                         <div class="form-control">
-                            <label for="profileImage">Profile Image</label>
-                            <input type="file" id="profileImage" name="image" accept="image/*" />
-                            <span id="profileImageError" class="error-message"></span>
-                        </div>
-                        <div class="form-control">
                             <label for="role">Role</label>
                             <select id="role" name="type">
                                 <option value="">Select role</option>
@@ -193,7 +93,7 @@
             </div>
         </section>
 
-        <script src="../javascript/addUser.js"></script>
+        <script src="../js/addUser.js"></script>
 </body>
 
 </html>

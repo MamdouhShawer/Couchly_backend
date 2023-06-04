@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import userForm from "../controller/addU.js";
 const router = Router();
 
 router.get("/", function (req, res) {
