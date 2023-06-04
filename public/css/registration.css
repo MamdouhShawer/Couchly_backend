@@ -160,6 +160,10 @@
   #email.typed {
     border-color: #09c372;
   }
+  #email.invalid
+  {
+    border-color: #ff3860;
+  }
   #pass {
     border-color: #ff3860;
   }
