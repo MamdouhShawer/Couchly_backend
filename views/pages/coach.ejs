@@ -12,107 +12,28 @@
             <tr>
               <h1>Couches</h1>
                 <div class="products">
-
+                  <% products.forEach(function(product) { %>
                 <div class="prod">
-                    <img src="../../imgs/c1.png" alt="coach1">
+                  <a href="/description">
+                    <img src="/imgs/<%= product.image %>" alt="<%= product.name %>">
+                </a>
 
                     <div class="design">
-                        <span>couch</span>
-                        <h5>Mint-Green Couch</h5>
-                      <h5>$20,000</h5>
+                     
+                        <h5><%= product.name %></h5>
+                        <h5><%= product.description %></h5>
+                        <h5><%= product.price %> EGP</h5>
+  
                       <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
                       <button class="btn2"><i class="uil uil-heart"></i></button>
                      
                     </div>
                 </div> 
-                <div class="prod">
-                    <img src="../../imgs/c2.png" alt="coach2">
-
-                    <div class="design">
-                        <span>couch</span>
-                        <h5>Blue couch</h5>
-                        <h5>$20,000</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-                <div class="prod">
-                    <img src="../../imgs/c3.png" alt="coach3">
-
-                    <div class="design">
-                        <span>couch</span>
-                        <h5>Black couch</h5>
-                        <h5>$20,000</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-
-
-                <div class="prod">
-                    <img src="../../imgs/c4.png" alt="coach4">
-
-                    <div class="design">
-                        <span>couch</span>
-                        <h5>White couch </h5>
-                        <h5>$20,000</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-            </div>
-            </div>
-            </td>
+                <% }); %>
+              </div>
             </tr>
-
-                <tr>
-                <td>
-                  <div class="prod">
-                    <a href="../html/description.html">
-                  <img src="../../imgs/c5.png" alt="coach5">
-                </a>
-                  <div class="design">
-                    <span>couch</span>
-                    <h5>Baby blue couch</h5>
-                    <h5>20000EGP</h5>
-                    <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                  </div>
-                  </div>
-                  </td>
-
-                     <td>
-                     <div class="prod">
-                        <a href="../html/description.html">
-                        <img src="../../imgs/c6.png" alt="coach6">
-                    </a>
-                        <div class="design">
-                          <span>couch</span>
-                          <h5>Dark Blue couch </h5>
-                          <h5>20000EGP</h5>
-                          <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                        </div>
-                    </div>
-                    </td>
-
-                    <td>
-                     <div class="prod">
-                        <a href="../html/description.html">
-                    <img src="../../imgs/c7.png" alt="coach7">
-                </a>
-                    <div class="design">
-                      <span>couch</span>
-                      <h5>Beige couch </h5>
-                      <h5>20000EGP</h5>
-                      <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                   </div>
-                   </div> 
-                   </td>
-                   </tr>
-</table>
-</section>
-
-<%- include('../partials/footer') %>
-
-</body>
+        </table>
+        <%- include('../partials/footer') %>
+    </body>
 </html>
+               
