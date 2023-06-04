@@ -133,4 +133,12 @@
 {
     color: #09c372;
 }
-
+#last {
+    border-color: #ff3860;
+  }
+  #last.empty {
+    border-color: #ff3860;
+  }
+  #last.typed {
+    border-color: #09c372;
+  }
