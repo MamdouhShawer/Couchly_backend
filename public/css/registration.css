@@ -151,3 +151,13 @@
   #username.typed {
     border-color: #09c372;
   }
+  #email {
+    border-color: #ff3860;
+  }
+  #email.empty {
+    border-color: #ff3860;
+  }
+  #email.typed {
+    border-color: #09c372;
+  }
+
