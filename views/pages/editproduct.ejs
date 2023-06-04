@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/addProduct.css">
+    <script defer src="addProduct.js"></script>
+    <title><%=title%>></title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  
+    <%- include('../partials/adminNav') %>
+<section id="content">
+
+    <%- include('../partials/navAdmin') %>
+    <div class="container">
+        <header>Edit Product </header>
+
+<form id="form" action="prodform" method="post">
+  <div class="form first">
+    <div class="product details">
+    <div class="fields">
+      <div class="left-side">
+        <div class="label-field">
+          <label for="input">Product Name</label> 
+         </div>
+         <div class="input-field">
+         <input id ="ProductName" type ="text" name="ProductName"  placeholder="" >
+         <div class="error"></div>
+        </div>
+    <div class="label-field">
+        <div class="label-field">
+            <label for="input">Quantity</label>
+           </div>
+          <div class="input-field">
+            <input id="quantity" type ="text" name="quantity" placeholder="">
+            <div class="error"></div>
+          </div>
+    <div class="label-field">
+      <label for="input">Main Price</label>
+    </div>
+    <div class="input-field">
+            <input id="MainPrice" type ="number" name="price"  placeholder="" >
+            <div class="error"></div>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="label-field">
+      <label for="input">Product Description</label>
+    </div>
+    <div class="input-field">
+         <textarea id="ProductDescription"class="form-control" name="description" placeholder="" ></textarea>
+         <div class="error"></div>
+    </div>
+    </div>
+  </div >
+  <button class="button" action="prodform" method="post">Apply</button>
+  </div>
+  </div>
+  </form>
+
+  </div>
+</body>
+</html>
