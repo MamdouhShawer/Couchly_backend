@@ -16,6 +16,7 @@ $(document).ready(function () {
                 else if(response=='taken')
                 {
                     $('#result').html('UserName is ' + response);
+                    $('#result').css("color", "red");
                 }
                 else {
                     $('#result').css("color", "green");
