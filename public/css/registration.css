@@ -142,3 +142,12 @@
   #last.typed {
     border-color: #09c372;
   }
+  #username {
+    border-color: #ff3860;
+  }
+  #username.empty {
+    border-color: #ff3860;
+  }
+  #username.typed {
+    border-color: #09c372;
+  }
