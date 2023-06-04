@@ -169,3 +169,12 @@
   #pass.typed {
     border-color: #09c372;
   }
+  #pass2{
+    border-color: #ff3860;
+  }
+  #pass2.empty {
+    border-color: #ff3860;
+  }
+  #pass2.typed {
+    border-color: #09c372;
+  }
