@@ -7,115 +7,28 @@
 
     </head>
     <body>
-      <%- include('../partials/nav') %>
+        <%- include('../partials/nav') %>
         <table>
             <tr>
-              <h1>Beds</h1>
+                <h1>Beds</h1>
                 <div class="products">
-
-                <div class="prod">
-                    <a href="/description">
-                    <img src="../../imgs/bed1.png" alt="bed1">
-                    </a>
-                    <div class="design">
-                        <span>Bed</span>
-                        <h5>Grey comfy bed</h5>
-                      <h5>20000EGP</h5>
-                      <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div> 
-                <div class="prod">
-                    <a href="/description">
-                    <img src="../../imgs/bed2.png" alt="bed2">
-                    </a>
-                    <div class="design">
-                        <span>Bed</span>
-                        <h5>brown comfy bed</h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-                <div class="prod">
-                    <a href="/description">
-                    <img src="../../imgs/bed3.png " alt="bed3">
-                    </a>
-                    <div class="design">
-                        <span>Bed</span>
-                        <h5>Black comfy bed  </h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-
-
-                <div class="prod">
-                    <a href="/description">
-                    <img src="../../imgs/bed4.png " alt="bed4">
-                    </a>
-                    <div class="design">
-                        <span>Bed</span>
-                        <h5>Beige comfy bed </h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-            </div>
-            </div>
-            </td>
-            </tr>
-
-                <tr>
-                <td>
-                  <div class="prod">
-                    <a href="/description">
-                  <img src="../../imgs/bed5.png " alt="bed5">
-                </a>
-                  <div class="design">
-                    <span>Bed</span>
-                    <h5>Coffee comfy bed</h5>
-                    <h5>20000EGP</h5>
-                    <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                  </div>
-                  </div>
-                  </td>
-
-                     <td>
-                     <div class="prod">
-                        <a href="/description">
-                        <img src="../../imgs/bed6.png " alt="bed6">
-                    </a>
-                        <div class="design">
-                          <span>Bed</span>
-                          <h5>Blue comfy bed</h5>
-                          <h5>20000EGP</h5>
-                          <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
+                    <% products.forEach(function(product) { %>
+                        <div class="prod">
+                            <a href="/description">
+                                <img src="/imgs/<%= product.image %>" alt="<%= product.name %>">
+                            </a>
+                            <div class="design">
+                                <span><%= product.name %></span>
+                                <h5><%= product.description %></h5>
+                                <h5><%= product.price %> EGP</h5>
+                                <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
+                                <button class="btn2"><i class="uil uil-heart"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    </td>
-
-                    <td>
-                     <div class="prod">
-                        <a href="/description">
-                    <img src="../../imgs/bed7.png" alt="bed7">
-                </a>
-                    <div class="design">
-                      <span>Bed</span>
-                      <h5>Black comfy bed</h5>
-                      <h5>20000EGP</h5>
-                      <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                   </div>
-                   </div> 
-                   </td>
-                   </tr>
-</table>
-</section>
-
-<%- include('../partials/footer') %>
-
-</body>
+                    <% }); %>
+                </div>
+            </tr>
+        </table>
+        <%- include('../partials/footer') %>
+    </body>
 </html>
