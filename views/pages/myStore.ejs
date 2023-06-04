@@ -10,6 +10,43 @@
     <link rel="stylesheet" href="css/myStore.css">
    
 </head>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+            const deleteButtons = document.querySelectorAll('.delete-btn');
+
+            deleteButtons.forEach((button) => {
+                button.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    console.log('Delete button clicked'); 
+                    const targetButton = e.target.closest('.delete-btn');
+                    targetButton.disabled = true; 
+                    const id = targetButton.getAttribute('element-id');
+
+                    if (!id) {
+                        alert('Error: Product ID is not set.');
+                        targetButton.disabled = false; 
+                        return;
+                    }
+
+                    try {
+                        const response = await fetch(`/myStore/delete/${id}`, {
+                            method: 'DELETE',
+                        });
+
+                        if (response.status === 200) {
+                            targetButton.closest('tr').remove();
+                            alert('Product deleted successfully');
+                        } else {
+                            throw new Error('Failed to delete product.');
+                        }
+                    } catch (error) {
+                        alert(error.message);
+                        targetButton.disabled = false; 
+                    }
+                });
+            });
+        });
+</script>
 <body>
     <%- include('../partials/adminNav') %>
 
@@ -67,8 +104,9 @@
         <td><%=element.description%></td>
         <td><img src="/imgs/<%=element.image%>"></td>
         <td>
-            <button><i class='bx bxs-edit-alt' ></i></button>
-            <button><i class='bx bxs-trash' ></i></button>
+            <button onclick="location.href='/editproduct'"> <i class='bx bxs-edit-alt' ></i></button>
+        <button elemnt-id="<%= element._id %>" class="delete-btn"><i
+                class='bx bxs-trash'></i></button>
         </td>
     </tr>
 
@@ -84,8 +122,9 @@
         <td><img src="/imgs/<%=element.image%>"></td>
 
         <td>
-        <button><i class='bx bxs-edit-alt' ></i></button>
-         <button><i class='bx bxs-trash' ></i></button>
+            <button onclick="location.href='/editproduct'"> <i class='bx bxs-edit-alt' ></i></button>
+            <button elemnt-id="<%= element._id %>" class="delete-btn"><i
+                    class='bx bxs-trash'></i></button>
         </td>
          </tr>
               
@@ -100,8 +139,9 @@
         <td><img src="/imgs/<%=element.image%>"></td>
 
         <td>
-        <button><i class='bx bxs-edit-alt' ></i></button>
-        <button><i class='bx bxs-trash' ></i></button>
+            <button onclick="location.href='/editproduct'"> <i class='bx bxs-edit-alt' ></i></button>
+            <button elemnt-id="<%= element._id %>" class="delete-btn"><i
+                    class='bx bxs-trash'></i></button>
         </td>
         </tr>
                               
@@ -116,8 +156,9 @@
         <td><img src="/imgs/<%=element.image%>"></td>
 
         <td>
-        <button><i class='bx bxs-edit-alt' ></i></button>
-        <button><i class='bx bxs-trash' ></i></button>
+            <button onclick="location.href='/editproduct'"> <i class='bx bxs-edit-alt' ></i></button>
+            <button elemnt-id="<%= element._id %>" class="delete-btn"><i
+                    class='bx bxs-trash'></i></button>
         </td>
         </tr>                                      
         <%  }) %>
@@ -130,8 +171,9 @@
         <td><%=element.description%></td>
         <td><img src="/imgs/<%=element.image%>"></td>
         <td>
-        <button><i class='bx bxs-edit-alt' ></i></button>
-        <button><i class='bx bxs-trash' ></i></button>
+            <button onclick="location.href='/editproduct'"> <i class='bx bxs-edit-alt' ></i></button>
+            <button elemnt-id="<%= element._id %>" class="delete-btn"><i
+                    class='bx bxs-trash'></i></button>
         </td>
         </tr>                                                      
         <%  }) %>
@@ -144,8 +186,9 @@
         <td><%=element.description%></td>
         <td><img src="/imgs/<%=element.image%>"></td>
         <td>
-        <button><i class='bx bxs-edit-alt' ></i></button>
-        <button><i class='bx bxs-trash' ></i></button>
+            <button onclick="location.href='/editproduct'"> <i class='bx bxs-edit-alt' ></i></button>
+            <button elemnt-id="<%= element._id %>" class="delete-btn"><i
+                    class='bx bxs-trash'></i></button>
         </td>
         </tr>
         
@@ -159,8 +202,9 @@
         <td><%=element.description%></td>
         <td><img src="/imgs/<%=element.image%>"></td>
         <td>
-        <button><i class='bx bxs-edit-alt' ></i></button>
-        <button><i class='bx bxs-trash' ></i></button>
+            <button onclick="location.href='/editproduct'"> <i class='bx bxs-edit-alt' ></i></button>
+            <button elemnt-id="<%= element._id %>" class="delete-btn"><i
+                    class='bx bxs-trash'></i></button>
         </td>
         </tr>
                                                                                               
@@ -174,8 +218,9 @@
         <td><%=element.description%></td>
         <td><img src="/imgs/<%=element.image %>"></td>
         <td>
-        <button><i class='bx bxs-edit-alt' ></i></button>
-        <button><i class='bx bxs-trash' ></i></button>
+            <button onclick="location.href='/editproduct'"> <i class='bx bxs-edit-alt' ></i></button>
+            <button elemnt-id="<%= element._id %>" class="delete-btn"><i
+                    class='bx bxs-trash'></i></button>
         </td>
         </tr>
         <%  }) %>
