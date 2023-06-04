@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#firstname").on('keyup', function () {
+    $("#last").on('keyup', function () {
       if ($(this).val().trim() === '') {
         $(this).removeClass('typed').addClass('empty');
       } else {

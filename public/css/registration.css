@@ -121,16 +121,24 @@
     color: #ff3860;
 }
 #firstname {
-    border-color: ff3860;
+    border-color: #ff3860;
   }
   #firstname.empty {
-    border-color: ff3860;
+    border-color: #ff3860;
   }
   #firstname.typed {
-    border-color: 09c372;
+    border-color: #09c372;
   }
 .inputControl.success
 {
     color: #09c372;
 }
-
+#last {
+    border-color: #ff3860;
+  }
+  #last.empty {
+    border-color: #ff3860;
+  }
+  #last.typed {
+    border-color: #09c372;
+  }
