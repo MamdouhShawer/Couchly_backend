@@ -4,10 +4,12 @@
 </head>
 <body>
 <%- include("../partials/nav.ejs") %>
+<div class ="container1">
 <form action="/logout" method="get">
 <h1>Hello <%= user.Username %></h1>
 <button>Logout</button>
 </form>
+</div>
 <%- include("../partials/footer.ejs") %>
 
 </body>
