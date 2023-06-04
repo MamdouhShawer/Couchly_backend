@@ -8,6 +8,7 @@ $(document).ready(function() {
     } else if (!regex.test(email)) {
       $(this).removeClass('typed').addClass('invalid');
       $('#resultt').html('Invalid email');
+      
     } else {
       $(this).removeClass('empty invalid').addClass('typed');
       $('#resultt').html(' ');
