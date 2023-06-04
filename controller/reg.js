@@ -18,7 +18,7 @@ const regform= async (req,res)=>{
       console.log(req.body)
    reg.save()
     .then( result => {
-        res.redirect("/")
+        res.redirect("/login")
     })
     .catch( err => {
         console.log(err)

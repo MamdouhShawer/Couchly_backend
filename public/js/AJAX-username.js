@@ -8,17 +8,21 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify({ UserName: data }),
             success: function (response) {
-               
-                    $('#result').html('UserName is ' + response);
-                
-                if ( ($('#username').val().trim() === '')||response == 'taken') {
+                if  ($('#username').val().trim() === '') {
                     $('#result').css("color", "red");
                     $('#username').removeClass('typed').addClass('empty');
-                    $('#result').html('');
+                    
+                }
+                else if(response=='taken')
+                {
+                    $('#result').html('UserName is ' + response);
+                    $('#username').removeClass('typed').addClass('empty');
+                    $('#result').css("color", "red");
                 }
                 else {
                     $('#result').css("color", "green");
                     $('#username').removeClass('empty').addClass('typed');
+                    $('#result').html('');
                     }
                 
             },
