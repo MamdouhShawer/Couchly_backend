@@ -12,9 +12,11 @@ $(document).ready(function () {
 
                 if (response == 'taken') {
                     $('#result').css("color", "red");
+                    $(this).removeClass('typed').addClass('empty');
                 }
                 else {
                     $('#result').css("color", "green");
+                    $(this).removeClass('empty').addClass('typed');
                 }
             },
             error:function(err){
