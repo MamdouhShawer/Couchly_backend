@@ -21,6 +21,7 @@
             <h1>G<%= product.name %> </h1>
             <p><%= product.description %></p>
                     <h2> <%= product.price %> EGP</h2><br>
+                    <% if(user!==""){%>
                     <div class="options">
                     <label for="quant">Quantity </label>
                     <select name="quant" id="quantity">
@@ -33,8 +34,10 @@
                     <br>
                 </div>
                     <div>
+                    
                         <button class="addWish">Add to wishlist</button>
                         <button class="addCart">Add to cart</button>
+                        <%}%>
                     </div>
           </div>
 
