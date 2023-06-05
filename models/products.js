@@ -42,4 +42,4 @@ const TotalPrice = prod
     console.error(error);
   });
 
-export default { prod, TotalPrice };
+export default prod;
