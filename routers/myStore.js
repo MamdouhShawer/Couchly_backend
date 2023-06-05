@@ -1,7 +1,8 @@
 import { Router } from "express";
-
+import deleteUser from "../controller/Removeuser.js";
 const router = Router();
 import prod from "../models/products.js"
+import deleteProd from "../controller/deleteproduct.js";
 
 
 router.get('/', function(req, res, next) {
@@ -35,8 +36,22 @@ router.get('/', function(req, res, next) {
       console.log(err);
       res.status(500).send("Internal Server Error");
     });
-})
-   
+});
+
+router.get("/", (req, res) => {
+  console.log("myStore.js: GET /myStore");
+  Users.find()
+    .then((result) => {
+      res.render("pages/myStore", {
+        Users: result,
+        title: "Couchly | myStore",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+router.delete("/delete/:id", deleteProd);
 
 
 export default router
