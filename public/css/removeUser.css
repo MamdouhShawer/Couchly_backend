@@ -27,7 +27,7 @@ li {
 	--light-yellow: #FFF2C6;
 	--orange: #FD7238;
 	--light-orange: #FFE0D3;
-    --blues: #0298cf;
+    --blues:rgb(0,109,91);
 }
 
 html {
