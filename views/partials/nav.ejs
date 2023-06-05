@@ -20,7 +20,7 @@
                         <li><a href="/login">Log in</a></li>
                     </span> 
                 <%}else{
-                    if(user.type!=="")
+                    if(user.type==="user")
                     {
                         %>
                         <span>
@@ -42,3 +42,23 @@
                 </ul>
             </div>
 </section>
+
+<script>
+    // get the current page URL
+    var currentPageUrl = window.location.href;
+
+    // loop through the navigation links and remove the "active" class from all link elements
+    var navLinks = document.querySelectorAll('#navbar a');
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].classList.remove('active');
+    }
+
+    // loop through the navigation links and check if their href exactly matches the current page URL
+    for (var i = 0; i < navLinks.length; i++) {
+        var linkUrl = navLinks[i].href;
+        if (currentPageUrl === linkUrl) {
+            // add the active class to the link element if it matches the current page URL
+            navLinks[i].classList.add('active');
+        }
+    }
+</script>
