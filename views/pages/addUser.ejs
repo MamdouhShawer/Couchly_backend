@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User</title>
+    <title>
+        <%= title %>
+    </title>
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
@@ -113,60 +115,60 @@
         <!-- CONTENT -->
         <section id="content">
             <!-- NavBar -->
-           <%- include ('../partials/navAdmin')%>
-            <!-- NavBar -->
-            <!-- Form -->
-            <div class="bodys">
-                <div class="container">
-                    <div class="header">
-                        <h2>Add User Form</h2>
-                    </div>
+            <%- include ('../partials/navAdmin')%>
+                <!-- NavBar -->
+                <!-- Form -->
+                <div class="bodys">
+                    <div class="container">
+                        <div class="header">
+                            <h2>Add User Form</h2>
+                        </div>
 
-                    <form action="/userForm" method="post" class="form" id="userForm" onsubmit="validateForm()">
-                        <div class="form-control">
-                            <label for="firstname">First Name</label>
-                            <input type="text" id="firstname" name="Firstname" placeholder="Enter firstname" />
-                            <span id="firstnameError" class="error-message"></span>
-                        </div>
-                        <div class="form-control">
-                            <label for="lastname">Last Name</label>
-                            <input type="text" id="lastname" name="Lastname" placeholder="Enter lastname" />
-                            <span id="lastnameError" class="error-message"></span>
-                        </div>
-                        <div class="form-control">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="Username" placeholder="Enter username" />
-                            <span id="usernameError" class="error-message"></span>
-                        </div>
-                        <div class="form-control">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter email" />
-                            <span id="emailError" class="error-message"></span>
-                        </div>
-                        <div class="form-control">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" placeholder="Enter password" />
-                            <span id="passwordError" class="error-message"></span>
-                        </div>
-                        <div class="form-control">
-                            <label for="confirmpassword">Confirm Password</label>
-                            <input type="password" id="confirmpassword" name="confirmpassword"
-                                placeholder="Confirm password" />
-                            <span id="confirmpasswordError" class="error-message"></span>
-                        </div>
-                        <div class="form-control">
-                            <label for="role">Role</label>
-                            <select id="role" name="type">
-                                <option value="">Select role</option>
-                                <option value="admin">Admin</option>
-                                <option value="user">User</option>
-                            </select>
-                            <span id="roleError" class="error-message"></span>
-                        </div>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
+                        <form action="/userForm" method="post" class="form" id="userForm" onsubmit="validateForm()">
+                            <div class="form-control">
+                                <label for="firstname">First Name</label>
+                                <input type="text" id="firstname" name="Firstname" placeholder="Enter firstname" />
+                                <span id="firstnameError" class="error-message"></span>
+                            </div>
+                            <div class="form-control">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" id="lastname" name="Lastname" placeholder="Enter lastname" />
+                                <span id="lastnameError" class="error-message"></span>
+                            </div>
+                            <div class="form-control">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="Username" placeholder="Enter username" />
+                                <span id="usernameError" class="error-message"></span>
+                            </div>
+                            <div class="form-control">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Enter email" />
+                                <span id="emailError" class="error-message"></span>
+                            </div>
+                            <div class="form-control">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" placeholder="Enter password" />
+                                <span id="passwordError" class="error-message"></span>
+                            </div>
+                            <div class="form-control">
+                                <label for="confirmpassword">Confirm Password</label>
+                                <input type="password" id="confirmpassword" name="confirmpassword"
+                                    placeholder="Confirm password" />
+                                <span id="confirmpasswordError" class="error-message"></span>
+                            </div>
+                            <div class="form-control">
+                                <label for="role">Role</label>
+                                <select id="role" name="type">
+                                    <option value="">Select role</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="user">User</option>
+                                </select>
+                                <span id="roleError" class="error-message"></span>
+                            </div>
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
         </section>
 
         <script src="../js/addUser.js"></script>
