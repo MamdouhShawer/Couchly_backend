@@ -1,11 +1,13 @@
 import {Router} from 'express';
+import prod from "../models/products.js";
 
 const router=Router();
 
-router.get('/',function(req,res){
-    console.log('decor.js: GET /decor');
-
-    res.render("pages/decor",{ user: (req.session.user === undefined ? "" : req.session.user) });
+router.get('/',async(req,res)=>{
+    console.log('coach.js: GET /coach');
+    const products = await prod.find({ category: 'decor' });
+    console.log(JSON.stringify({ products }))
+    res.render("pages/decor",{ products,user: (req.session.user === undefined ? "" : req.session.user) });
 });
 
 export default router;
