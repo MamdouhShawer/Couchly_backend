@@ -7,4 +7,6 @@ router.get("/", function (req, res) {
   res.render("pages/addUser", { title: "Couchly | addUser" });
 });
 
+
+
 export default router;
