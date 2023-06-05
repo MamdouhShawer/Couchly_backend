@@ -33,13 +33,5 @@ const productSchema = new Schema(
 
 const prod = mongoose.model("product", productSchema);
 
-const TotalPrice = prod
-  .aggregate([{ $group: { _id: null, total: { $sum: "$price" } } }])
-  .then((result) => {
-    return result[0].total; 
-  })
-  .catch((error) => {
-    console.error(error);
-  });
 
-export default { prod, TotalPrice };
+export default prod;
