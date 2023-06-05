@@ -20,10 +20,10 @@
                         <li><a href="/login">Log in</a></li>
                     </span> 
                 <%}else{
-                    if(user.type==="user")
+                    if(user.type!=="")
                     {
-                        %>
-                        <span>
+                     %>
+                    <span>
                         <li><a href="/wishlist">Wishlist</a></li>
                     </span>
                     <span>
@@ -32,6 +32,7 @@
                     <span>
                         <li><a href="/profile">Profile</a></li>
                     </span>
+
                     <%}%>
 
                 <%}%>
