@@ -17,14 +17,15 @@ export async function showDashboard(req, res) {
   try {
     const userCount = await Users.countDocuments();
     const checkCount = await check.countDocuments();
-    const Prices = TotalPrice;
-    const id = req.params.id;
-    await prod.find(id);
+    const Prices = await TotalPrice;
+
+    const recentOrder = await check.find();
     res.render("pages/dashboard", {
       title: "Couchly | dashboard",
       showDashboard: userCount,
       OrdersCount: checkCount,
-      TPrice: Prices,
+      TotalPrice: Prices,
+      recentOrder,
     });
   } catch (error) {
     console.error(error);
@@ -32,4 +33,4 @@ export async function showDashboard(req, res) {
   }
 }
 
-export default TotalPrice;
+// export default TotalPrice;
