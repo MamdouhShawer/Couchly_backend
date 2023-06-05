@@ -14,26 +14,30 @@
             
             <tr>
             <h1>Kitchens</h1>
-                <div class="products">
-                    <% products.forEach(function(product) { %>
-                <div class="prod">
-                    <a href="/description">
-                        <img src="/imgs/<%= product.image %>" alt="<%= product.name %>">
-                    </a>
-                    <div class="design">
-                        <span><%= product.name %></span>
-                        <h5><%= product.description %></h5>
-                        <h5><%= product.price %> EGP</h5>
-                      <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                     
-                    </div>
-                </div> 
-                <% }); %>
+            <div class="products">
+                <% for (var i = 0; i < products.length; i += 4) { %>
+                    <tr>
+                        <% for (var j = i; j < i + 4 && j < products.length; j++) { %>
+                            <td>
+                                <div class="prod">
+                                    <a href="/description">
+                                        <img src="/imgs/<%= products[j].image %>" alt="<%= products[j].name %>">
+                                    </a>
+                                    <div class="design">
+                                        <span><%= products[j].name %></span>
+                                        <h5><%= products[j].description %></h5>
+                                        <h5><%= products[j].price %> EGP</h5>
+                                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
+                                        <button class="btn2"><i class="uil uil-heart"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                        <% } %>
+                    </tr>
+                <% } %>
             </div>
         </tr>
     </table>
     <%- include('../partials/footer') %>
 </body>
 </html>
-                
