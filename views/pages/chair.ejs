@@ -12,81 +12,32 @@
             <tr>
                 <h1>Chairs</h1>
                 <div class="products">
-
+                  <% products.forEach(function(product) { %>
                 <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs/chair1.png" alt="chair1">
-                   </a>
+                  <a href="/description">
+                    <img src="/imgs/<%= product.image %>" alt="<%= product.name %>">
+                </a>
                     <div class="design">
-                        <span>Chairs</span>
-                        <h5>Black chair</h5>
-                      <h5>20000EGP</h5>
+                        <span><%= product.name %></span>
+                        <h5><%= product.description %></h5>
+                        <h5><%= product.price %></h5>
                       <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
                       <button class="btn2"><i class="uil uil-heart"></i></button>
                      
                     </div>
                 </div> 
-                <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs/chair2.png" alt="chair2">
-                    </a>
-                    <div class="design">
-                        <span>Chairs</span>
-                        <h5>Orange chair</h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-                <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs/chair3.png" alt="chair3">
-                    </a>
-                    <div class="design">
-                        <span>Chairs</span>
-                        <h5>Grey chair</h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
 
-
-                <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs/chair4.png" alt="chair4">
-                    </a>
-                    <div class="design">
-                        <span>Chairs</span>
-                        <h5>Beige chair </h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-            </div>
-            </div>
-            </td>
+                <% }); %>
+              </div>
             </tr>
+        </table>
+        <%- include('../partials/footer') %>
+    </body>
+    </html>
+                  
+  
+  
+                  
 
-                <tr>
-                <td>
-                  <div class="prod">
-                    <a href="../html/description.html">
-                  <img src="../../imgs/chair5.png" alt="chair5">
-                </a>
-                  <div class="design">
-                    <span>Chairs</span>
-                    <h5>Yellow chair</h5>
-                    <h5>20000EGP</h5>
-                    <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                  </div>
-                  </div>
-                  </td> 
-                   </td>
-                   </tr>
-</table>
-</section>
-<%- include('../partials/footer') %>
 
-</body>
-</html>
+                
