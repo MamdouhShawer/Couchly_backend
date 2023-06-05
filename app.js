@@ -8,6 +8,7 @@ import session from "express-session";
 import fileUpload from "express-fileupload";
 import Users from "./models/user.js";
 import prod from "./models/products.js";
+
 const dburi =
   "mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?retryWrites=true&w=majority";
 
@@ -64,6 +65,8 @@ import removeuser_router from "./routers/removeUser.js";
 import mystore_router from "./routers/myStore.js";
 import salesAdmin_router from "./routers/salesAdmin.js";
 import logout_router from "./routers/logout.js";
+import editprod_router from"./routers/editproduct.js";
+import deleteprod_router from"./routers/deleteProduct.js";
  
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -118,6 +121,8 @@ app.use(session({ secret: "Your_Secret_Key" }));
  app.use('/salesAdmin',salesAdmin_router);
  app.use('/logout',logout_router);
  app.use('/userForm',adduserroute_router);
+ app.use('/editproduct',editprod_router);
+ app.use('/deleteProduct',deleteprod_router);
 
 
  /*

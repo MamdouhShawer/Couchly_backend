@@ -15,51 +15,25 @@
             <tr>
             <h1>Kitchens</h1>
                 <div class="products">
-
+                    <% products.forEach(function(product) { %>
                 <div class="prod">
                     <a href="/description">
-                    <img src="../../imgs/kit1.png" alt="kit1" >
+                        <img src="/imgs/<%= product.image %>" alt="<%= product.name %>">
                     </a>
                     <div class="design">
-                        <span>Kitchens</span>
-                        <h5>Modern kitchen</h5>
-                      <h5>20000EGP</h5>
+                        <span><%= product.name %></span>
+                        <h5><%= product.description %></h5>
+                        <h5><%= product.price %> EGP</h5>
                       <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
                       <button class="btn2"><i class="uil uil-heart"></i></button>
                      
                     </div>
                 </div> 
-                <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs/kit2.png" alt="kit2">
-                    </a>
-                    <div class="design">
-                        <span>Kitchens</span>
-                        <h5>Modern kitchen</h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-                <div class="prod">
-                    <a href="/description">
-                    <img src="../../imgs/kit3.png" alt="kit3">
-                    </a>
-                    <div class="design">
-                        <span>Kitchens</span>
-                        <h5>Modern kitchen</h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-               
-</table>
-</section>
-
-<%- include('../partials/footer') %>
-
-
-
+                <% }); %>
+            </div>
+        </tr>
+    </table>
+    <%- include('../partials/footer') %>
 </body>
 </html>
+                
