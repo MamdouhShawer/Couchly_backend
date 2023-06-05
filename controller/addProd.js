@@ -1,5 +1,9 @@
 import prod from "../models/products.js"
-import path from 'path'
+import path ,{dirname} from "path";
+import { fileURLToPath } from "url";
+// Read the current directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const prodform= async (req,res)=>{
     
@@ -10,7 +14,7 @@ const prodform= async (req,res)=>{
       return res.status(400).send('No files were uploaded.');
     }
     imgFile = req.files.img;
-    uploadPath = __dirname + '../public/imgs/' + req.body.ProductCategory + path.extname(imgFile.name);
+    uploadPath = path.join(__dirname + '../public/imgs/' + req.body.ProductCategory + path.extname(imgFile.name));
     // Use the mv() method to place the file somewhere on your server
     imgFile.mv(uploadPath, function (err) {
       if (err)
@@ -23,7 +27,7 @@ const prodform= async (req,res)=>{
         quantity:req.body.quantity,
         price:req.body.price,
         description:req.body.description,
-        image:req.body.ProductCategory + path.extname(imgFile.name),
+        image:req.body.ProductCategory + path.extname(imgFile.name)
       });
 
   
@@ -37,4 +41,4 @@ const prodform= async (req,res)=>{
 }
 
 
-export default prodform;
+export default prodform;
