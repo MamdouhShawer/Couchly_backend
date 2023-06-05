@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="/css/nav.css" />
 <section id="header">
         <a href="/"><img src="imgs/logo.png" class="logo"
@@ -7,38 +8,55 @@
                 <ul id="navbar">
                     <input type="search" id="search" placeholder="Search..">
                     <span >
-                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="/" id="home-link" >Home</a></li>
                     </span>
                    <span >
-                       <li><a href="/shop" >Categories</a></li>
+                       <li><a href="/shop" id="categories-link" >Categories</a></li>
                     </span>
                     <span>
-                        <li><a href="/about">About</a></li>
+                        <li><a href="/about" id="about-link">About</a></li>
                     </span>
                     <% if(user===""){%>
                      <span>
-                        <li><a href="/login">Log in</a></li>
+                        <li><a href="/login" id="login-link">Log in</a></li>
                     </span> 
                 <%}else{
-                    if(user.type!=="")
+                    if(user.type!=="user")
                     {
                         %>
                         <span>
-                        <li><a href="/wishlist">Wishlist</a></li>
+                        <li><a href="/wishlist" id="wishlist-link">Wishlist</a></li>
                     </span>
                     <span>
-                        <li><a href="/cart">Cart</a></li>
+                        <li><a href="/cart" id="cart-link">Cart</a></li>
                     </span>
                     <span>
-                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/profile" id="profile-link">Profile</a></li>
                     </span>
                     <%}%>
 
                 <%}%>
-                   
-
-                    
                     </div>
                 </ul>
             </div>
 </section>
+
+<script>
+    // get the current page URL
+    var currentPageUrl = window.location.href;
+
+    // loop through the navigation links and remove the "active" class from all link elements
+    var navLinks = document.querySelectorAll('#navbar a');
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].classList.remove('active');
+    }
+
+    // loop through the navigation links and check if their href exactly matches the current page URL
+    for (var i = 0; i < navLinks.length; i++) {
+        var linkUrl = navLinks[i].href;
+        if (currentPageUrl === linkUrl) {
+            // add the active class to the link element if it matches the current page URL
+            navLinks[i].classList.add('active');
+        }
+    }
+</script>
