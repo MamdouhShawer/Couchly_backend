@@ -14,88 +14,26 @@
             <tr>
                 <h1>Cupboards</h1>
                 <div class="products">
-                    
+                  <% products.forEach(function(product) { %>
                 <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs\dolab1.png" alt="wardrobe1">
+                  <a href="/description">
+                    <img src="/imgs/<%= product.image %>" alt="<%= product.name %>">
                 </a>
 
                     <div class="design">
-                        <span>cupboard</span>
-                        <h5>wooden cupboard</h5>
-                        <h5>20000EGP</h5>
+                        <span><%= product.name %></span>
+                        <h5><%= product.description %></h5>
+                      <h5><%= product.price %></h5>
                       <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
                       <button class="btn2"><i class="uil uil-heart"></i></button>
                      
                     </div>
                 </div> 
-                <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs\dolab2.png" alt="wardrobe2">
-                </a>
 
-                    <div class="design">
-                        <span>cupboard</span>
-                        <h5>wooden cupboard</h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-                <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs\dolab3.png" alt="wardrobe3">
-                </a>
-
-                    <div class="design">
-                        <span>cupboard</span>
-                        <h5>wooden cupboard</h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                    </div>
-                </div>
-
-
-                <div class="prod">
-                    <a href="../html/description.html">
-                    <img src="../../imgs\dolab4.png" alt="wardrobe4">
-                </a>
-
-                    <div class="design">
-                        <span>cupboard</span>
-                        <h5>wooden cupboard </h5>
-                        <h5>20000EGP</h5>
-                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-            </div>
-            </div>
-            </td>
+                <% }); %>
+              </div>
             </tr>
-
-                <tr>
-                <td>
-                  <div class="prod">
-                    <a href="../html/description.html">
-                  <img src="../../imgs\dolab5.png" alt="wardrobe5">
-                </a>
-                  <div class="design">
-                    <span>wardrobe</span>
-                    <h5>wooden cupboard</h5>
-                    <h5>20000EGP</h5>
-                    <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                      <button class="btn2"><i class="uil uil-heart"></i></button>
-                  </div>
-                  </div>
-                  </td> 
-                   </td>
-                   </tr>
-</table>
-</section>
-
-<%- include('../partials/footer') %>
-
-
-
-</body>
-</html>
+        </table>
+        <%- include('../partials/footer') %>
+    </body>
+    </html>
