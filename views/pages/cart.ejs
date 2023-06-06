@@ -11,6 +11,7 @@
 <body>
  
     <%- include('../partials/nav') %>
+    
     <section id="cart">
         <h1>My Cart</h1>
         
@@ -57,26 +58,21 @@
                     <th>Quantity</th>
                     <th>Total price</th>
                     <th>Condition</th>
-                    
                 </tr>
                 
-                <tr>    
-                    <td><img src="../../imgs/bed1.png" alt="bed1" width="120"height="120"></td>
-                    <td>Beds</td>
-                    <td>10000EGP</td>
-                    <td>2</td> <!--hna haytb3t el quantity mn el page nafsaha-->
-                    <td>20000EGP</td> <!--hna b3d ma ytb3t el quantity hayzwd 3la el price nafso (original price*quantity)-->
+                <% if (cartItems.length === 0) { %>
+                    <p>Your cart is empty.</p>
+                    <% } else { %>
+                    <% cartItems.forEach(item => { %>
+                <tr>   
+                    <td><img src="/imgs/<%= item.image %>" alt="bed1" width="120"height="120"></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.price %></td>
+                    <td><%= item.quantity %></td>
                     <td> <button>Remove</button></td>
                 </tr>
-                <tr>  
-                    <td><img src="../../imgs/c8.png" alt="couch8" width="120"height="120"></td>
-                    <td>Couches</td>
-                    <td>15000EGP</td>
-                    <td>3</td> <!--hna haytb3t el quantity mn el page nafsaha-->
-                    <td>45000EGP</td> <!--hna b3d ma ytb3t el quantity hayzwd 3la el price nafso (original price*quantity)-->
-                    <td><button>Remove</button></td>
-                </tr>
-
+                <% }); %>
+                <% } %>
 
             </table> 
 
