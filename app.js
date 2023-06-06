@@ -45,7 +45,7 @@ import kitchens_router from "./routers/kitchens.js";
 import Lshape_router from "./routers/L-shape.js";
 import Login_router from "./routers/login.js";
 import priv_router from "./routers/privacyPolicy.js";
-import sale_router from "./routers/sale.js";
+
 import terms_router from "./routers/terms&condition.js";
 import wardrobe_router from "./routers/wardrobe.js";
 import wish_router from "./routers/wishlist.js";
@@ -64,7 +64,7 @@ import addProd_router from "./routers/addProduct.js";
 import dash_router from "./routers/dashboard.js";
 import removeuser_router from "./routers/removeUser.js";
 import mystore_router from "./routers/myStore.js";
-import salesAdmin_router from "./routers/salesAdmin.js";
+
 import logout_router from "./routers/logout.js";
 import editprod_router from"./routers/editproduct.js";
 import addtocart_router from "./routers/addtocart.js";
@@ -104,7 +104,7 @@ app.use(flash());
  app.use('/L-shape', Lshape_router);
  app.use('/login', Login_router);
  app.use('/privacyPolicy', priv_router);
- app.use('/sale', sale_router);
+
  app.use('/terms&condition', terms_router);
  app.use('/wardrobe', wardrobe_router);
  app.use('/wishlist', wish_router);
@@ -122,7 +122,7 @@ app.use(flash());
  app.use('/adduser',adduser_router);
  app.use('/myStore',mystore_router);
  app.use('/removeuser',removeuser_router);
- app.use('/salesAdmin',salesAdmin_router);
+
  app.use('/logout',logout_router);
  app.use('/userForm',adduserroute_router);
  app.use('/editproduct',editprod_router);

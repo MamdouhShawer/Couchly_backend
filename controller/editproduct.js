@@ -1,7 +1,7 @@
 import prod from "../models/products.js";
 
 
-const editProduct = async (req, res) => {
+/*const editProduct = async (req, res) => {
     const { id } = req.params;
     //const { name, quantity, price, description } = req.body;
     const { name, quantity, price, description } = req.body;
@@ -20,6 +20,23 @@ const editProduct = async (req, res) => {
         } catch (error) {
           res.status(500).json({ message: "Failed to update product" });
         }
-  };
+  };*/
+  const editProduct= async (req,res)=>{
+    const pr = new prod ({
+      name:req.body.ProductName,
+      quantity:req.body.quantity,
+      price:req.body.price,
+      description:req.body.description,
+    });
+
+
+ pr.save()
+  .then( result => {
+      res.redirect("/")
+  })
+  .catch( err => {
+      console.log(err)
+  });
+}
   
   export default editProduct;
