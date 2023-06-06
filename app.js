@@ -14,11 +14,6 @@ import nodemailer from 'nodemailer';
 const dburi =
   "mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?retryWrites=true&w=majority";
 
-/*mongoose.connect(dburi)
-.then(result=>app.listen(8080,(req,res)=>{
-  console.log("listning on port 8080");
-}))
-.catch(console.log("Connecting to database...."));*/
 
 const app = express();
 
@@ -68,6 +63,7 @@ import mystore_router from "./routers/myStore.js";
 import logout_router from "./routers/logout.js";
 import editprod_router from"./routers/editproduct.js";
 import addtocart_router from "./routers/addtocart.js";
+import deletfromcart_router from "./routers/deletefromcart.js";
 
 
  
