@@ -68,7 +68,7 @@ import mystore_router from "./routers/myStore.js";
 import logout_router from "./routers/logout.js";
 import editprod_router from"./routers/editproduct.js";
 import addtocart_router from "./routers/addtocart.js";
-import deletfromcart_router from "./routers/deletefromcart.js";
+
 
  
 // Read the current directory name
