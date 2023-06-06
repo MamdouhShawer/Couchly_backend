@@ -35,9 +35,9 @@ confirmPassword:{
 
 
 const Users=newFunction();
-export default Users;
+
 
 function newFunction() {
     return model('Users', usersSchmea);
 }
-
+export default Users;

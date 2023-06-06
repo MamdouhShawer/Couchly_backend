@@ -65,7 +65,7 @@
                     <div class="table-header">
                         <p>User detalis</p>
                         <div>
-                            <form action="/removeUser/search" method="get">
+                            <form action="/removeUser/searchuser" method="get">
                                 <input type="text" name="query" placeholder="Search for user ...">
                                 <button type="submit">Search</button>
                               </form>
@@ -119,23 +119,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="pagination">
-                        <% if (currentPage> 1) { %>
-                            <div><a href="?page=1"><i class='bx bx-chevrons-left'></i></a></div>
-                            <div><a href="?page=<%= currentPage - 1 %>"><i class='bx bx-chevron-left'></i></a></div>
-                            <% } %>
-                                <% for (let i=1; i <=totalPages; i++) { %>
-                                    <div class="<%= currentPage === i ? 'active' : '' %>"><a href="?page=<%= i %>">
-                                            <%= i %>
-                                        </a></div>
-                                    <% } %>
-                                        <% if (currentPage < totalPages) { %>
-                                            <div><a href="?page=<%= currentPage + 1 %>"><i
-                                                        class='bx bx-chevron-right'></i></a></div>
-                                            <div><a href="?page=<%= totalPages %>"><i
-                                                        class='bx bx-chevrons-right'></i></a></div>
-                                            <% } %>
-                    </div>
+       
 
                 </div>
         </section>
