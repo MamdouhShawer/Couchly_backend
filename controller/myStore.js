@@ -34,33 +34,26 @@ router.get('/', function(req, res, next) {
   */
  
   const searchProducts = async (req, res) => {
-    var query ={ category: "beds" };
-    var query1={ category: "couches" };
-    var query2={ category: "kitchens" };
-    var query3={ category: "L-shape" };
-    var query4={ category: "desks" };
-    var query5={ category: "decors" };
-    var query6={ category: "chairs" };
-    var query7={ category: "cupboards" };
+    var query ={ category: req.query.category };
+    // var query1={ category: "couches" };
+    // var query2={ category: "kitchens" };
+    // var query3={ category: "L-shape" };
+    // var query4={ category: "desks" };
+    // var query5={ category: "decors" };
+    // var query6={ category: "chairs" };
+    // var query7={ category: "cupboards" };
   
     
       
     Promise.all([
-        prod.find(query),
-        prod.find(query1),
-        prod.find(query2),
-        prod.find(query3),
-        prod.find(query4),
-        prod.find(query5),
-        prod.find(query6),
-        prod.find(query7)
+        prod.find(query)
     
         
       ])
     
-      .then(([result1,result2,result3,result4,result5,result6,result7,result8]) => {
+      .then((result) => {
         
-        res.render("pages/displaysearchprod",{ product: result1 , product1:result2 ,product2:result3, product3:result4, product4:result5, product5:result6, product6:result7, product7:result8, user: (req.session.user === undefined ? "" : req.session.user) });
+        res.render("pages/displaysearchprod",{ product: result ,user: (req.session.user === undefined ? "" : req.session.user) });
       })
     try {
       const products = await prod.find(query);
