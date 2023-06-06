@@ -21,7 +21,7 @@
                             <% for (var j = i; j < i + 4 && j < products.length; j++) { %>
                                 <td>
                                     <div class="prod">
-                                        <a href="/description">
+                                        <a href="/description?id=<%= products[j]._id %>">
                                             <img src="/imgs/<%= products[j].image %>" alt="<%= products[j].name %>">
                                         </a>
                                         <div class="design">
