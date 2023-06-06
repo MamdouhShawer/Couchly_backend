@@ -41,8 +41,9 @@ margin-top: 30px;
 }
 
 .check{
+margin-left: 20px;
    margin-top: 10px;
-   border-spacing: 50px;
+   border-spacing: 90px;
    font-size: small; 
 }
 a:link {
