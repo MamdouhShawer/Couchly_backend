@@ -82,9 +82,10 @@
                     return; 
                 }
                 input.forEach((item, index)=>{
+                    console.log(item._id);
                     if (index>0)
                     searchResult.innerHTML+='<hr>';
-                    searchResult.innerHTML+=`<p>${item.name}</p>`
+                    searchResult.innerHTML+=`<a href="/description?id=${item._id}">${item.name}</a>`
                 });
             })
             return;
