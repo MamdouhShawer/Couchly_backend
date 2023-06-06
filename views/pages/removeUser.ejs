@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="/css/removeUser.css">
@@ -18,14 +20,14 @@
             deleteButtons.forEach((button) => {
                 button.addEventListener('click', async (e) => {
                     e.preventDefault();
-                    console.log('Delete button clicked'); 
+                    console.log('Delete button clicked');
                     const targetButton = e.target.closest('.delete-btn');
-                    targetButton.disabled = true; 
+                    targetButton.disabled = true;
                     const id = targetButton.getAttribute('data-id');
 
                     if (!id) {
                         alert('Error: User ID is not set.');
-                        targetButton.disabled = false; 
+                        targetButton.disabled = false;
                         return;
                     }
 
@@ -42,7 +44,7 @@
                         }
                     } catch (error) {
                         alert(error.message);
-                        targetButton.disabled = false; 
+                        targetButton.disabled = false;
                     }
                 });
             });
@@ -60,76 +62,86 @@
 
             <%- include ('../partials/navAdmin')%>
 
-            <div class="table">
-                <div class="table-header">
-                    <p>User detalis</p>
-                    <div>
-                        <input type="search" placeholder="Search for user ...">
-                        <button class="add-new">Search</button>
+                <div class="table">
+                    <div class="table-header">
+                        <p>User detalis</p>
+                        <div>
+                            <input type="search" placeholder="Search for user ...">
+                            <button class="add-new">Search</button>
+                        </div>
                     </div>
-                </div>
-                <div class="table-section">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>First name</th>
-                                <th>Last name</th>
-                                <th>username</th>
-                                <th>Email</th>
-                                <th>password</th>
-                                <th>Role</th>
-                                <th>Action</th>
-
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <% Users.forEach(data=>{ %>
+                    <div class="table-section">
+                        <table>
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <%= data.Firstname %>
-                                    </td>
-                                    <td>
-                                        <%= data.Lastname %>
-                                    </td>
-                                    <td>
-                                        <%= data.Username %>
-                                    </td>
-                                    <td>
-                                        <%= data.email %>
-                                    </td>
-                                    <td>
-                                        <%= data.password %>
-                                    </td>
-                                    <td>
-                                        <%= data.type %>
-                                    </td>
-                                    <td>
-                                        <button data-id="<%= data._id %>" class="edit-btn"><i
-                                                class='bx bxs-edit-alt'></i></button>
-                                        <button data-id="<%= data._id %>" class="delete-btn"><i
-                                                class='bx bxs-trash'></i></button>
-                                    </td>
-                                </tr>
+                                    <th>First name</th>
+                                    <th>Last name</th>
+                                    <th>username</th>
+                                    <th>Email</th>
+                                    <th>password</th>
+                                    <th>Role</th>
+                                    <th>Action</th>
 
-                                <% }); %>
-                        </tbody>
-                    </table>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <% Users.forEach(data=>{ %>
+                                    <tr>
+                                        <td>
+                                            <%= data.Firstname %>
+                                        </td>
+                                        <td>
+                                            <%= data.Lastname %>
+                                        </td>
+                                        <td>
+                                            <%= data.Username %>
+                                        </td>
+                                        <td>
+                                            <%= data.email %>
+                                        </td>
+                                        <td>
+                                            <%= data.password %>
+                                        </td>
+                                        <td>
+                                            <%= data.type %>
+                                        </td>
+                                        <td>
+                                            <button data-id="<%= data._id %>" class="edit-btn"><i
+                                                    class='bx bxs-edit-alt'></i></button>
+                                            <button data-id="<%= data._id %>" class="delete-btn"><i
+                                                    class='bx bxs-trash'></i></button>
+                                        </td>
+                                    </tr>
+
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <% if (currentPage> 1) { %>
+                            <div><a href="?page=1"><i class='bx bx-chevrons-left'></i></a></div>
+                            <div><a href="?page=<%= currentPage - 1 %>"><i class='bx bx-chevron-left'></i></a></div>
+                            <% } %>
+                                <% for (let i=1; i <=totalPages; i++) { %>
+                                    <div class="<%= currentPage === i ? 'active' : '' %>"><a href="?page=<%= i %>">
+                                            <%= i %>
+                                        </a></div>
+                                    <% } %>
+                                        <% if (currentPage < totalPages) { %>
+                                            <div><a href="?page=<%= currentPage + 1 %>"><i
+                                                        class='bx bx-chevron-right'></i></a></div>
+                                            <div><a href="?page=<%= totalPages %>"><i
+                                                        class='bx bx-chevrons-right'></i></a></div>
+                                            <% } %>
+                    </div>
+
                 </div>
-                <div class="pagination">
-                    <div><i class='bx bx-chevrons-left'></i></div>
-                    <div><i class='bx bx-chevron-left'></i></div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div><i class='bx bx-chevron-right'></i></div>
-                    <div><i class='bx bx-chevrons-right'></i></div>
-                </div>
-            </div>
         </section>
 
 
 
-        <script src="/public/js/dashboard.js"></script>
+        <script src="../js/dashboard.js"></script>
 </body>
 
 </html>
