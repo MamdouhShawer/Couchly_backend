@@ -1,5 +1,4 @@
 import { Router } from "express";
-import deleteUser from "../controller/Removeuser.js";
 const router = Router();
 import prod from "../models/products.js"
 import deleteProd from "../controller/deleteproduct.js";
@@ -54,4 +53,4 @@ router.get("/", (req, res) => {
 router.delete("/delete/:id", deleteProd);
 
 
-export default router
+export default router;

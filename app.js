@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import session from "express-session";
 import fileUpload from "express-fileupload";
 import Users from "./models/user.js";
+import bodyParser from "body-parser";
 import prod from "./models/products.js";
 
 const dburi =
@@ -122,6 +123,10 @@ app.use(session({ secret: "Your_Secret_Key" }));
  app.use('/logout',logout_router);
  app.use('/userForm',adduserroute_router);
  app.use('/editproduct',editprod_router);
+ app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use("/myStore/edit", editprod_router);
 
 
  /*
@@ -193,6 +198,7 @@ app.get('/add',(req,res)=>{
 /*
 app.get('/addProduct',(req,res)=>{
   const products =new prod({
+    id:"1",
     image:"rana",
     category:"beds",
     description:"ayhaga",
@@ -209,9 +215,9 @@ app.get('/addProduct',(req,res)=>{
     console.log(err);
   });
 
-});
+});*/
 
-
+/*
 // Error handling
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;
