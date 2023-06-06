@@ -87,3 +87,11 @@
     width:95%;
     margin:20px auto 0 auto;
 }
+#searchresults a{ 
+    text-decoration: none;
+    color: black;
+    
+}
+#searchresults a:visited { text-decoration: none; }
+#searchresults a:hover { text-decoration: none; }
+#searchresults a:active { text-decoration: none; }
