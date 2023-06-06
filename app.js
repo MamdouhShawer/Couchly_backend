@@ -8,7 +8,7 @@ import session from "express-session";
 import fileUpload from "express-fileupload";
 import Users from "./models/user.js";
 import bodyParser from "body-parser";
-import prod from "./models/products.js";
+import flash from 'connect-flash';
 
 const dburi =
   "mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?retryWrites=true&w=majority";
@@ -67,6 +67,7 @@ import mystore_router from "./routers/myStore.js";
 import salesAdmin_router from "./routers/salesAdmin.js";
 import logout_router from "./routers/logout.js";
 import editprod_router from"./routers/editproduct.js";
+import addtocart_router from "./routers/addtocart.js";
 
 
  
@@ -87,6 +88,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: "Your_Secret_Key" }));
+app.use(flash());
 
  app.use('/', index_router);
  app.use('/shop', shop_router);
@@ -124,6 +126,7 @@ app.use(session({ secret: "Your_Secret_Key" }));
  app.use('/logout',logout_router);
  app.use('/userForm',adduserroute_router);
  app.use('/editproduct',editprod_router);
+ app.use('/addtocart',addtocart_router);
 
  app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
