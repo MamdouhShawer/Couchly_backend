@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
   });
   */
  
-  const searchProducts = async (req, res) => {
+  /*const searchProducts = async (req, res) => {
     var query ={ category: req.query.category };
     // var query1={ category: "couches" };
     // var query2={ category: "kitchens" };
@@ -47,8 +47,6 @@ router.get('/', function(req, res, next) {
       
     Promise.all([
         prod.find(query)
-    
-        
       ])
     
       .then((result) => {
@@ -61,5 +59,20 @@ router.get('/', function(req, res, next) {
     } catch (error) {
       res.status(500).json({ message: "Failed to search products" });
     }
+  };
+export default searchProducts*/
+
+const searchProducts= async (req, res) => {
+  var query ={category:req.query.query};
+  console.log(query)
+  prod.find(query)
+     .then(result=>{
+        console.log(result)
+        return res.render("pages/displaysearchprod", { title: "My Store", product :result });
+
+     })
+     .catch(error=> {
+           res.status(500).json({ message:error });
+         })
   };
 export default searchProducts
