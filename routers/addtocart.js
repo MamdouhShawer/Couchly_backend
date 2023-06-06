@@ -10,6 +10,9 @@ router.get('/', async (req, res) => {
         return res.status(404).send(`Product not found for ID: ${req.query.id}`);
       }
   
+      // Get the quantity chosen by the user from the query parameter
+      const quantity = parseInt(req.query.quantity) || 1;
+  
       // Initialize cart to an empty array if it is undefined
       if (!req.session.cart) {
         req.session.cart = [];
@@ -20,7 +23,7 @@ router.get('/', async (req, res) => {
       let newItem = true;
       for (let i = 0; i < cart.length; i++) {
         if (cart[i].name === product.name) {
-          cart[i].quantity++;
+          cart[i].quantity += quantity;
           newItem = false;
           break;
         }
@@ -29,18 +32,16 @@ router.get('/', async (req, res) => {
         cart.push({
           name: product.name,
           category: product.category,
-          quantity: 1,
+          quantity: quantity,
           price: product.price,
           description: product.description,
           image: product.image
         });
       }
       console.log(req.session.cart);
-      req.flash('success', 'Product added to cart');
       res.redirect('cart');
     } catch (error) {
       console.error(error.message);
-      req.flash('error', 'An error occurred');
       res.redirect('pages/categories');
     }
   });
