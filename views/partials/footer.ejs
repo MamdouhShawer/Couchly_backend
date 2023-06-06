@@ -1,19 +1,19 @@
 <link rel="stylesheet" href="../css/footer.css">
-<footer class="pageFooter" >
+<footer class="pageFooter">
     <div class="col">
-        <img  class="Logo "src="../../imgs/logo.png"alt="" width="145" height="50">
+        <img class="Logo " src="../../imgs/logo.png" alt="" width="145" height="50">
         <h4>Contact</h4>
         <p><strong>Adress: </strong>Misr International University</p>
         <p><strong>Phone: </strong>01000000000</p>
         <p><strong>Hours: </strong>9 am - 12 am . Mon-Sat</p>
-        <div class = "follow">
+        <div class="follow">
             <h4>Follow us</h4>
-            <div class = "icon">
-                <a href ="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i></a>
-                <a href ="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                <a href ="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                <a href ="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a>
-                <a href ="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            <div class="icon">
+                <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         <a href="/">Home</a>
         <a href="/privacyPolicy">Privacy policy</a>
         <a href="/terms&condition">Terms & conditions</a>
-     
+
     </div>
 
     <div class="col">
@@ -32,7 +32,7 @@
         <a href="/cart">View cart</a>
         <a href="/wishlist">My wishlist</a>
         <a href="/api">Location</a>
-     
+
     </div>
 
     <div class="col install">
@@ -44,14 +44,41 @@
         </div>
         <p>Secured payment geteways</p>
         <img src="../../imgs/Payment.png" width="300" height="50">
-       
-    
+
+
     </div>
 
-   
+
 </footer>
 
 
-         <div class="copyright">
-            <p>© 2023, Couchly - E-Commerce</p>
-         </div>
+<div class="copyright">
+    <p>© 2023, Couchly - E-Commerce</p>
+</div>
+
+
+
+
+
+
+    <button class="open-button-chat" onclick="openForm()">&#129302;</button>
+
+    <div class="chat-popup" id="myForm">
+        <form>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeForm()">&times;</a>
+            <iframe allow="microphone;" width="350" height="430"
+                src="https://console.dialogflow.com/api-client/demo/embedded/63789ab7-62f7-40d1-9ac9-2824ee28bdfc">
+            </iframe>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+

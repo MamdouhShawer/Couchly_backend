@@ -81,3 +81,9 @@
     border:none;
     cursor: pointer;
 }
+
+#searchresults{
+    max-width:600px;
+    width:95%;
+    margin:20px auto 0 auto;
+}
