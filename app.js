@@ -200,6 +200,7 @@ app.get('/add',(req,res)=>{
 /*
 app.get('/addProduct',(req,res)=>{
   const products =new prod({
+    id:"1",
     image:"rana",
     category:"beds",
     description:"ayhaga",
@@ -216,9 +217,9 @@ app.get('/addProduct',(req,res)=>{
     console.log(err);
   });
 
-});
+});*/
 
-
+/*
 // Error handling
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;

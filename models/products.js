@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema(
   {
+    id:{
+      type: String,
+      required:true,
+    },
     name: {
       type: String,
       required: true,
@@ -31,6 +35,12 @@ const productSchema = new Schema(
   { timestamps: true }
 );
 
+
+/*productSchema.virtual('productId').get(function () {
+  return this._id.toHexString();
+});*/
+
 const prod = mongoose.model("product", productSchema);
+
 
 export default prod;

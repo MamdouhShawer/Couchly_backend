@@ -15,17 +15,13 @@
 
         <div class ="container1">
           <div class="xzoom-container">
-            <img src="../../imgs/bed1.png" class="xzoom" xoriginal="../../imgs/bed1.png">
+            <img src="/imgs/<%= product.image %>" class="xzoom" xoriginal="../../imgs/bed1.png">
           </div>
           <div class="description">
-            <h1>Grey comfy bed</h1>
-            <p>The compact design is perfect for tight spaces or under low ceilings, so you can make the most of your available space.
-
-                The hard-wearing solid pine has natural variations in grain, colour and texture, giving every piece a unique look.</p>
-                <p>If you oil, wax, lacquer or stain the untreated solid wood surface it will be more durable and easy to care for.
-                    There’s plenty of space under the bed for storage boxes - perfect for storing extra duvets and pillows.
-                    You can easily vacuum under the bed frame to keep the space clean and dust-free.</p>
-                    <h2>20000EGP</h2><br>
+            <h1>G<%= product.name %> </h1>
+            <p><%= product.description %></p>
+                    <h2> <%= product.price %> EGP</h2><br>
+                    <% if(user!==""){%>
                     <div class="options">
                     <label for="quant">Quantity </label>
                     <select name="quant" id="quantity">
@@ -38,8 +34,10 @@
                     <br>
                 </div>
                     <div>
+                    
                         <button class="addWish">Add to wishlist</button>
                         <button class="addCart">Add to cart</button>
+                        <%}%>
                     </div>
           </div>
 
@@ -47,7 +45,5 @@
         </div>
       
 <%- include('../partials/footer') %>
-       
-
 
 </html>
