@@ -1,10 +1,13 @@
-body{
+body
+{
     width:100%;
+    background-color: white;
 }
 
 /* Header */
 
-#header{
+#header
+{
     display : flex;
     align-items: center;
     justify-content: space-between;
@@ -15,6 +18,7 @@ body{
     top:0;
     left:0;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.25);
+    font-size: large;
 }
 #search {
     margin:20px;
@@ -90,17 +94,21 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 1px;
     padding-top:20px;
+    font-size: large;
     
 }
 #aboutUs h1{
     justify-content: center;
     text-align: center;
     font-size:30;
+    font-size: xx-large;
 }
 #aboutUs p{
     padding-left:20px;
     padding-right: 20px;
     color:black;
+    text-shadow: 200px;
+    font-size: large;
 }
 .team{
     display:flex;
