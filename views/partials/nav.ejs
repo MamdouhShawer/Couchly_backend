@@ -1,36 +1,45 @@
-<link rel="stylesheet" href="/css/nav.css" />
+<html lang="en">
+
+</html><link rel="stylesheet" href="/css/nav.css" />
+
+<div class="language">
+    <select id="language-selector" >
+        <option value="en">English</option>
+        <option value="ar">Arabic (العربية)</option>
+    </select>
+</div>
 <section id="header">
         <a href="/"><img src="imgs/logo.png" class="logo"
                 alt="Logo" width="145" height="50"></a>
         <div class="container">
             <div>
                 <ul id="navbar">
-                        <input type="search" id="search" placeholder="Search..">
+                        <input type="search" id="search"  placeholder="Search..">
                     <span >
-                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="/" data-lang="home"class="active" >Home</a></li>
                     </span>
                    <span >
-                       <li><a href="/shop" >Categories</a></li>
+                       <li ><a href="/shop" data-lang="categories">Categories</a></li>
                     </span>
                     <span>
-                        <li><a href="/about">About</a></li>
+                        <li ><a href="/about" data-lang="about">About</a></li>
                     </span>
                     <% if(user===""){%>
                      <span>
-                        <li><a href="/login">Log in</a></li>
+                        <li ><a href="/login" data-lang="login">Log in</a></li>
                     </span> 
                 <%}else{
                     if(user.type!=="")
                     {
                      %>
                     <span>
-                        <li><a href="/wishlist">Wishlist</a></li>
+                        <li ><a href="/wishlist" data-lang="wishlist" >Wishlist</a></li>
                     </span>
                     <span>
-                        <li><a href="/cart">Cart</a></li>
+                        <li ><a href="/cart" data-lang="cart">Cart</a></li>
                     </span>
                     <span>
-                        <li><a href="/profile">Profile</a></li>
+                        <li ><a href="/profile" data-lang="profile">Profile</a></li>
                     </span>
 
                     <%}%>
@@ -43,8 +52,7 @@
                 </ul>
             </div>
 </section>
-
-<script>
+ <script>
     // get the current page URL
     var currentPageUrl = window.location.href;
 
@@ -62,4 +70,41 @@
             navLinks[i].classList.add('active');
         }
     }
+
+    let lang = {
+        ar: {
+          home: "المنزل",
+          categories:"الفئات",
+          about:"من نحن",
+          login:"تسجيل الدخول",
+          wishlist:"قائمة الرغبات",
+          cart:"السلة",
+          profile:"الملف الشخصي"
+
+        },
+        
+        en: {
+        home: "Home",
+        categories:"Categories",
+        about:"About",
+        login:"Login",
+        wishlist:"Wishlist",
+        cart:"Cart",
+        profile:"Profile"
+       }
+      };
+      let select = document.querySelector('select');
+      let nodes = Array.from(document.querySelectorAll('[data-lang]'));
+      
+      
+      function changeLang() {
+      let language = select.value;
+        nodes.forEach(node => {
+          let key = node.getAttribute('data-lang');
+          node.textContent = lang[language][key];
+        })
+      };
+    
+      select.onchange = changeLang;
 </script>
+</html>
