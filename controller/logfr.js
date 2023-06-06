@@ -11,16 +11,23 @@ const signinform = (req, res) => {
             if (result.length > 0) {
               console.log(result[0]);
               req.session.user = result[0];
-              res.render('pages/index', { userP: result[0], user: (req.session.user === undefined ? "" : req.session.user) });
+              if(req.session.user.type==='admin'){
+                res.redirect('/dashboard')
+              }
+              else{
+              res.redirect('/');
+            }
             }
             else {
               res.send('invalid data')
             }
           })
+        
+      
           .catch(err => {
             console.log(err);
           });
-      };
+      }
 
       
   
