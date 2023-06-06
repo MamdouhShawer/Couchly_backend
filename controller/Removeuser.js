@@ -12,6 +12,28 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const paging = async (req, res) => {
+  console.log("removeUser.js: GET /removeUser");
+  const page = req.query.page || 1;
+  const limit = 10;
 
+  Users.find()
+    .skip((page - 1) * limit)
+    .limit(limit)
+    .then((result) => {
+      Users.estimatedDocumentCount().then((count) => {
+        res.render("pages/removeUser", {
+          Users: result,
+          title: "Couchly | removeUser",
+          currentPage: parseInt(page),
+          totalPages: Math.ceil(count / limit),
+        });
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
-export default deleteUser;
+const collectFunctions = { paging, deleteUser };
+export default collectFunctions;
