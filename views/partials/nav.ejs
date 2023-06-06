@@ -5,7 +5,7 @@
         <div class="container">
             <div>
                 <ul id="navbar">
-                        <input type="search" id="search" placeholder="Search..">
+                        <input type="search" id="search" placeholder="Search.." onkeyup="sendData(this)">
                     <span >
                         <li><a href="/" class="active">Home</a></li>
                     </span>
@@ -43,7 +43,46 @@
                 </ul>
             </div>
 </section>
+<section id="searchresults">
 
+</section>
+<script>
+    function sendData(e)
+    {
+        const searchResult=document.getElementById('searchresults');
+        let match =e.value.match(/^[a-zA-Z]*/);
+        let match2 =e.value.match(/\s*/);
+        if(match2[0]===e.value)
+        {
+            searchResult.innerHTML='';
+            return;
+        }
+        if(match[0]===e.value)
+        {
+            fetch('searchProduct',{
+                method:'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({'input': e.value})
+            }).then(res=>res.json()).then(data=>{
+                let input =data.input;
+                console.log(input);
+                searchResult.innerHTML='';
+                if(input.length<1)
+                {
+                    searchResult.innerHTML='<p>No item found</p>';
+                    return; 
+                }
+                input.forEach((item, index)=>{
+                    if (index>0)
+                    searchResult.innerHTML+='<hr>';
+                    searchResult.innerHTML+=`<p>${item.name}</p>`
+                });
+            })
+            return;
+        }
+        searchResult.innerHTML='';
+    }
+</script>
 <script>
     // get the current page URL
     var currentPageUrl = window.location.href;
