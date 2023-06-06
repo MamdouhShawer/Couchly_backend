@@ -15,22 +15,30 @@ const TotalPrice = prod
 
 export async function showDashboard(req, res) {
   try {
-    const userCount = await Users.countDocuments();
-    const checkCount = await check.countDocuments();
-    const Prices = await TotalPrice;
-
-    const recentOrder = await check.find();
-    res.render("pages/dashboard", {
-      title: "Couchly | dashboard",
-      showDashboard: userCount,
-      OrdersCount: checkCount,
-      TotalPrice: Prices,
-      recentOrder,
-    });
+    if (req.session.user !== undefined && req.session.user.type === "admin") {
+      console.log("dashboard.js: GET /dashboard");
+      const userCount = await Users.countDocuments();
+      const checkCount = await check.countDocuments();
+      const Prices = await TotalPrice;
+      const recentOrder = await check.find();
+      res.render("pages/dashboard", {
+        title: "Couchly | dashboard",
+        showDashboard: userCount,
+        OrdersCount: checkCount,
+        TotalPrice: Prices,
+        recentOrder,
+        user: req.session.user === undefined ? "" : req.session.user,
+      });
+    } else {
+      res.render("pages/err", {
+        err: "You are not an admin ,  you can't access this page ",
+        user: req.session.user === undefined ? "" : req.session.user,
+      });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal server error");
   }
 }
 
-// export default TotalPrice;
+export default TotalPrice;
