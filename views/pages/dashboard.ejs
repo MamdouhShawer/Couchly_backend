@@ -125,43 +125,8 @@
 			</main>
 		</section>
 
-		<script>
-			const addTodoButton = document.getElementById("addTodo");
-			const todoList = document.querySelector(".todo-list");
-
-			// Add a new todo item
-			addTodoButton.addEventListener("click", function () {
-				const newTodo = document.createElement("li");
-				newTodo.innerHTML = `
-				<input type="text" placeholder="Todo" />
-				<span class="edit-icon"><i class="bx bx-edit"></i></span>
-				<span class="delete-icon"><i class="bx bx-trash"></i></span>
-			  `;
-				todoList.appendChild(newTodo);
-			});
-
-			// Delete a todo item
-			todoList.addEventListener("click", function (event) {
-				if (event.target.closest(".delete-icon")) {
-					event.target.closest("li").remove();
-				}
-			});
-
-			// Edit a todo item
-			todoList.addEventListener("click", function (event) {
-				if (event.target.closest(".edit-icon")) {
-					const todoText = event.target.closest("li").querySelector("input").value;
-					const newInput = document.createElement("input");
-					newInput.type = "text";
-					newInput.value = todoText;
-					event.target.closest("li").replaceChild(
-						newInput,
-						event.target.closest("li").querySelector("input")
-					);
-				}
-			});
-		</script>
-		<!-- <script src=""></script> -->
+		
+		<script src="/js/dashboard.js"></script>
 
 </body>
 
