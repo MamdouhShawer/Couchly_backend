@@ -68,6 +68,7 @@ import salesAdmin_router from "./routers/salesAdmin.js";
 import logout_router from "./routers/logout.js";
 import editprod_router from"./routers/editproduct.js";
 
+
  
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -123,6 +124,7 @@ app.use(session({ secret: "Your_Secret_Key" }));
  app.use('/logout',logout_router);
  app.use('/userForm',adduserroute_router);
  app.use('/editproduct',editprod_router);
+
  app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

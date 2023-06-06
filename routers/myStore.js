@@ -2,6 +2,7 @@ import { Router } from "express";
 const router = Router();
 import prod from "../models/products.js"
 import deleteProd from "../controller/deleteproduct.js";
+import searchProducts from "../controller/myStore.js";
 
 
 router.get('/', function(req, res, next) {
@@ -39,10 +40,10 @@ router.get('/', function(req, res, next) {
 
 router.get("/", (req, res) => {
   console.log("myStore.js: GET /myStore");
-  Users.find()
+  prod.find()
     .then((result) => {
       res.render("pages/myStore", {
-        Users: result,
+        prod: result,
         title: "Couchly | myStore",
       });
     })
@@ -51,6 +52,6 @@ router.get("/", (req, res) => {
     });
 });
 router.delete("/delete/:id", deleteProd);
-
+router.get("/search", searchProducts);
 
 export default router;
