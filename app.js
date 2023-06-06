@@ -8,7 +8,7 @@ import session from "express-session";
 import fileUpload from "express-fileupload";
 import Users from "./models/user.js";
 import bodyParser from "body-parser";
-import prod from "./models/products.js";
+import flash from 'connect-flash';
 
 const dburi =
   "mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?retryWrites=true&w=majority";
@@ -45,7 +45,7 @@ import kitchens_router from "./routers/kitchens.js";
 import Lshape_router from "./routers/L-shape.js";
 import Login_router from "./routers/login.js";
 import priv_router from "./routers/privacyPolicy.js";
-import sale_router from "./routers/sale.js";
+
 import terms_router from "./routers/terms&condition.js";
 import wardrobe_router from "./routers/wardrobe.js";
 import wish_router from "./routers/wishlist.js";
@@ -64,9 +64,10 @@ import addProd_router from "./routers/addProduct.js";
 import dash_router from "./routers/dashboard.js";
 import removeuser_router from "./routers/removeUser.js";
 import mystore_router from "./routers/myStore.js";
-import salesAdmin_router from "./routers/salesAdmin.js";
+
 import logout_router from "./routers/logout.js";
 import editprod_router from"./routers/editproduct.js";
+import addtocart_router from "./routers/addtocart.js";
 
 
  
@@ -87,6 +88,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: "Your_Secret_Key" }));
+app.use(flash());
 
  app.use('/', index_router);
  app.use('/shop', shop_router);
@@ -102,7 +104,7 @@ app.use(session({ secret: "Your_Secret_Key" }));
  app.use('/L-shape', Lshape_router);
  app.use('/login', Login_router);
  app.use('/privacyPolicy', priv_router);
- app.use('/sale', sale_router);
+
  app.use('/terms&condition', terms_router);
  app.use('/wardrobe', wardrobe_router);
  app.use('/wishlist', wish_router);
@@ -120,10 +122,11 @@ app.use(session({ secret: "Your_Secret_Key" }));
  app.use('/adduser',adduser_router);
  app.use('/myStore',mystore_router);
  app.use('/removeuser',removeuser_router);
- app.use('/salesAdmin',salesAdmin_router);
+
  app.use('/logout',logout_router);
  app.use('/userForm',adduserroute_router);
  app.use('/editproduct',editprod_router);
+ app.use('/addtocart',addtocart_router);
 
  app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

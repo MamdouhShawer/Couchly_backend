@@ -1,9 +1,11 @@
 import { Router } from "express";
-const router = Router();
 import prod from "../models/products.js"
 import deleteProd from "../controller/deleteproduct.js";
 import searchProducts from "../controller/myStore.js";
+import paging from "../controller/paging.js";
+import editProduct from"../controller/editproduct.js"
 
+const router = Router();
 
 router.get('/', function(req, res, next) {
   var query ={ category: "beds" };
@@ -51,7 +53,10 @@ router.get("/", (req, res) => {
       console.log(err);
     });
 });
+
 router.delete("/delete/:id", deleteProd);
 router.get("/search", searchProducts);
+router.get("/paging", paging);
+router.put("/edit",editProduct);
 
 export default router;

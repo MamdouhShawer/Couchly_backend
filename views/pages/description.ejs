@@ -15,7 +15,7 @@
 
         <div class ="container1">
           <div class="xzoom-container">
-            <img src="/imgs/<%= product.image %>" class="xzoom" xoriginal="../../imgs/bed1.png">
+            <img src="/imgs/<%= product.image %>" class="xzoom" >
           </div>
           <div class="description">
             <h1><%= product.name %> </h1>
@@ -34,9 +34,10 @@
                     <br>
                 </div>
                     <div>
-                    
-                        <button class="addWish">Add to wishlist</button>
+                      <button class="addWish">Add to wishlist</button>
+                      <a href="/addtocart?id=<%= product._id %>">
                         <button class="addCart">Add to cart</button>
+                      </a>
                         <%}%>
                     </div>
           </div>
