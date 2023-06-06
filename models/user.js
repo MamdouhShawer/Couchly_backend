@@ -1,5 +1,5 @@
 import mongoose, { Schema as _Schema, model } from 'mongoose';
-
+import bcrypt from "bcrypt";
 const Schema=_Schema;
 
 const usersSchmea=new Schema({
@@ -33,11 +33,20 @@ confirmPassword:{
 },
 },{timestamps:true});
 
+//hashing the password
+usersSchmea.pre('save',async function(next){
+   const salt=await bcrypt.genSalt();
+    this.password=await bcrypt.hash(this.password,salt);
+    this.confirmPassword=await bcrypt.hash(this.confirmPassword,salt);
+     next();
 
-const Users=newFunction();
+});
 
+//const Users=newFunction();
 
 function newFunction() {
     return model('Users', usersSchmea);
 }
-export default Users;
+const Users=mongoose.model('user',usersSchmea);
+
+export default Users
