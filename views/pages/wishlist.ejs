@@ -25,31 +25,55 @@
                         <th>Price</th>
                         <th>Condition</th>
                         
-                    </tr>
-                    
+                      
+                       </tr>
+                    <% if (items.length === 0) { %>
+                        <p>Your wishlist is empty.</p>
+                    <% }else { %>
+                        <% items.forEach(item=> { %>
                     <tr>   
                         <td><img src="/imgs/<%= item.image %>"  width="120"height="120"></td>
                         <td><%= item.name %></td>
                         <td><%= item.price %></td>
                         <td><%= item.quantity %></td>
-                    </tr>
-                   <button>Add to cart</button>
-                   
-                    <button>Remove</button></td>
 
+               <td>
+                <a href="/cart"> 
+                         <button>Add to cart</button> 
+                           </a>
+                           <a href="">
+                              <button>Remove</button></td>
+                           </a>
+               </td>
+                    
+                       
+                         <br>
+                         <br>
+                  
+                   
                     </tr>
+                     <% }); %>
+                    <% } %>
                 </table> 
                 
                
             </div>
 
-          <button class="delbutton">Delete wishlist</button>
+           <a href=" ">
+            <button class="delbutton">Delete wishlist</button>
+
+           </a>
         </section>
 
           
        
      
-        <%- include('../partials/footer') %>
+        
 
-                </body>
-                </html>
+<%- include('../partials/footer') %>
+
+    </body>
+
+
+                
+</html>                

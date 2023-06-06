@@ -68,7 +68,7 @@ import mystore_router from "./routers/myStore.js";
 import logout_router from "./routers/logout.js";
 import editprod_router from"./routers/editproduct.js";
 import addtocart_router from "./routers/addtocart.js";
-import wishlist_router from "./routers/wishlist.js";
+import wishlist_router from "./routers/addtowishlist.js";
  
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
