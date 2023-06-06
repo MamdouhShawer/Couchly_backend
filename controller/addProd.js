@@ -14,7 +14,7 @@ const prodform= async (req,res)=>{
       return res.status(400).send('No files were uploaded.');
     }
     imgFile = req.files.img;
-    uploadPath = path.join(__dirname + '../public/imgs/' + req.body.ProductCategory + path.extname(imgFile.name));
+    uploadPath = path.join(__dirname , '../public/imgs/' + req.body.ProductName + path.extname(imgFile.name));
     // Use the mv() method to place the file somewhere on your server
     imgFile.mv(uploadPath, function (err) {
       if (err)
@@ -27,7 +27,7 @@ const prodform= async (req,res)=>{
         quantity:req.body.quantity,
         price:req.body.price,
         description:req.body.description,
-        image:req.body.ProductCategory + path.extname(imgFile.name)
+        image:req.body.ProductName + path.extname(imgFile.name)
       });
 
   
