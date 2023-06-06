@@ -4,7 +4,12 @@ const router = Router();
 router.get("/", function (req, res) {
   console.log("addUser.js: GET /addUser");
 
-  res.render("pages/addUser", { title: "Couchly | addUser" });
+  if (req.session && req.session.user && req.session.user.type === 'admin') {
+    res.render("pages/addUser",{ user: (req.session.user === undefined ? "" : req.session.user) });
+  }
+  else{
+    res.render('pages/err', { err: "You are not admin ,  you can't access this page ", user: (req.session.user === undefined ? "" : req.session.user) })
+  }
 });
 
 

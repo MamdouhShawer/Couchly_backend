@@ -10,47 +10,15 @@
 </head>
 <body>
  
-    <%- include('../partials/nav') %>
+    <% include('../partials/nav') %>
     
     <section id="cart">
         <h1>My Cart</h1>
         
-            <div class = "proceed-Table">
-                <table width="43%">
-                    <tr>
-                        <th  colspan="3">Cart Total</th>
-                    </tr>
-                    <tr>    
-                       <td><h5>Subtotal</h5></td>
-                        <td></td>
-                       <td><h5>100000EGP</h5></td>
-                    </tr>
-                    <tr>
-                        <td><h5>Shipping</h5></td>
-                        <td></td>
-                        <td><h5>255EGP</h5></td>
-                    </tr>
-                    <tr>    
-                        <td><h5>coupon</h5></td>
-                        <td><input type="text" placeholder="Coupon code"></td>
-                        <td><h5><button>Apply</button></h5></td>
-                     </tr>
-                    <tr>
-                        <td><h5>Total</h5></td>
-                        <td></td>
-                        <td><h5>1000255EGP</h5></td>
-                    </tr> 
-                    <tr>
-                        <td></td>
-                        <td><button><a href="/checkout">Proceed to checkout</button></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-        <div class = "cart-Table">
-            
+       
+
+        <div class="cart-Table">
             <table width="50%">
-                
                 <tr>
                     <th>Product</th>
                     <th>Category</th>
@@ -59,30 +27,49 @@
                     <th>Total price</th>
                     <th>Condition</th>
                 </tr>
-                
+
+                <% let totalPrice = 0; %>
                 <% if (cartItems.length === 0) { %>
                     <p>Your cart is empty.</p>
-                    <% } else { %>
+                <% } else { %>
                     <% cartItems.forEach(item => { %>
-                <tr>   
-                    <td><img src="/imgs/<%= item.image %>" alt="bed1" width="120"height="120"></td>
-                    <td><%= item.name %></td>
-                    <td><%= item.price %></td>
-                    <td><%= item.quantity %></td>
-                    <td> <button>Remove</button></td>
-                </tr>
-                <% }); %>
+                        <tr>   
+                            <td><img src="/imgs/<%= item.image %>" alt="bed1" width="120" height="120"></td>
+                            <td><%= item.name %></td>
+                            <td><%= item.price %></td>
+                            <td><%= item.quantity %></td>
+                            <td><%= item.price * item.quantity %></td>
+                            <td><button>Remove</button></td>
+                        </tr>
+                        <% totalPrice += item.price * item.quantity; %>
+                    <% }); %>
                 <% } %>
-
-            </table> 
-
-           
-            
-           
+            </table>
+        </div>
+        <div class="proceed-Table">
+            <table width="43%">
+                <tr>
+                    <th colspan="3">Cart Total</th>
+                </tr>
+                <tr>
+                    <td><h5>Total</h5></td>
+                    <td></td>
+                    <td><h5 id="total"><%=totalPrice%> </h5></td>
+                </tr> 
+                <tr>
+                    <td></td>
+                    <td><button><a href="/checkout">Proceed to checkout</a></button></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
     </section>
-    <br><br><br>
 
-      
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("total").textContent = "$" + totalPrice.toFixed(2);
+        });
+    </script>
+
 </body>
 </html>
