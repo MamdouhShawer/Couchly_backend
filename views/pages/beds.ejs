@@ -20,16 +20,13 @@
                                         <span><%= products[j].category %></span>
                                         <h5><%= products[j].name %></h5>
                                         <h5><%= products[j].price %> EGP</h5>
-                                        <a href="/addtocart?id=<%= products._id %>&quantity=" id="add-to-cart">
-                                             
-                                            <button class="btn1">+</button>
-                                           
+                                        <a href="/addtocart?id=<%= products[j]._id %>&quantity=">
+                                            <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
                                         </a>
-                                       <a>
-                                         <button class="btn2"></button>
-                                       </a>
-                                       
-                                    </div>
+                                        <a href="/addtowishlist?id=<%= products[j]._id %>&quantity=">
+                                            <button class="btn2"><i class="uil uil-heart"></i></button>
+                                        </a>
+                                        </div>
                                 </div>
                             </td>
                         <% } %>

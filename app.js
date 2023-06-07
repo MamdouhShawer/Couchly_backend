@@ -65,6 +65,7 @@ import editprod_router from"./routers/editproduct.js";
 import addtocart_router from "./routers/addtocart.js";
 import wishlist_router from "./routers/addtowishlist.js";
 import deletfromcart_router from "./routers/deletefromcart.js";
+import deletewishlist_router from "./routers/deletewishlist.js";
 
 
  
@@ -123,7 +124,7 @@ app.use(flash());
  app.use('/editproduct',editprod_router);
  app.use('/addtocart',addtocart_router);
  app.use('/deletefromcart',deletfromcart_router);
-
+app.use('/deletewishlist',deletewishlist_router);
  app.use("/myStore/edit", editprod_router);
  app.use("/addtowishlist",wishlist_router);
  app.use(bodyParser.urlencoded({ extended: true }));
