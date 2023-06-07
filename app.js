@@ -127,11 +127,10 @@ app.use(flash());
  app.use('/editproduct',editprod_router);
  app.use('/addtocart',addtocart_router);
 
+ app.use("/myStore/edit", editprod_router);
+ app.use("/addtowishlist",wishlist_router);
  app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-app.use("/myStore/edit", editprod_router);
-app.use("/addtowishlist",wishlist_router);
 
  /*
   app.get('/add',(req,res)=>{
