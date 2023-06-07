@@ -2,12 +2,8 @@
 
 </html><link rel="stylesheet" href="/css/nav.css" />
 
-<div class="language">
-    <select id="language-selector" >
-        <option value="en">English</option>
-        <option value="ar">Arabic (العربية)</option>
-    </select>
-</div>
+
+
 <section id="header">
         <a href="/"><img src="imgs/logo.png" class="logo"
                 alt="Logo" width="145" height="50"></a>
@@ -23,7 +19,8 @@
                     </span>
                     <span>
                         <li ><a href="/about" data-lang="about">About</a></li>
-                    </span>
+</span>
+
                     <% if(user===""){%>
                      <span>
                         <li ><a href="/login" data-lang="login">Log in</a></li>
@@ -112,40 +109,5 @@
         }
     }
 
-    let lang = {
-        ar: {
-          home: "المنزل",
-          categories:"الفئات",
-          about:"من نحن",
-          login:"تسجيل الدخول",
-          wishlist:"قائمة الرغبات",
-          cart:"السلة",
-          profile:"الملف الشخصي"
-
-        },
-        
-        en: {
-        home: "Home",
-        categories:"Categories",
-        about:"About",
-        login:"Login",
-        wishlist:"Wishlist",
-        cart:"Cart",
-        profile:"Profile"
-       }
-      };
-      let select = document.querySelector('select');
-      let nodes = Array.from(document.querySelectorAll('[data-lang]'));
-      
-      
-      function changeLang() {
-      let language = select.value;
-        nodes.forEach(node => {
-          let key = node.getAttribute('data-lang');
-          node.textContent = lang[language][key];
-        })
-      };
-    
-      select.onchange = changeLang;
 </script>
 </html>
