@@ -15,7 +15,7 @@ const deleteUser = async (req, res) => {
 const paging = async (req, res) => {
   console.log("removeUser.js: GET /removeUser");
   const page = req.query.page || 1;
-  const limit = 10;
+  const limit = 5;
 
   Users.find()
     .skip((page - 1) * limit)
