@@ -27,8 +27,12 @@
                                         <span><%= products[j].category%></span>
                                         <h5><%= products[j].name %></h5>
                                         <h5><%= products[j].price %> EGP</h5>
-                                        <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
-                                        <button class="btn2"><i class="uil uil-heart"></i></button>
+                                        <a href="/addtocart?id=<%= products[j]._id %>&quantity=">
+                                            <button class="btn1"><i class="uil uil-shopping-cart-alt"></i></button>
+                                        </a>
+                                        <a href="/addtowishlist?id=<%= products[j]._id %>&quantity=">
+                                            <button class="btn2"><i class="uil uil-heart"></i></button>
+                                        </a>
                                     </div>
                                 </div>
                             </td>
