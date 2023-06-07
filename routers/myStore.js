@@ -40,6 +40,7 @@ router.get('/', function(req, res, next) {
     });
 });
 
+
 router.get("/", (req, res) => {
   console.log("myStore.js: GET /myStore");
   prod.find()
@@ -53,6 +54,7 @@ router.get("/", (req, res) => {
       console.log(err);
     });
 });
+ 
 
 router.delete("/delete/:id", deleteProd);
 router.get("/search", searchProducts);
