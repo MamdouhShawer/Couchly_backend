@@ -21,9 +21,7 @@
                     <tr>
                         <th>Product</th>
                         <th>Category</th>
-                        <th>Status</th>
                         <th>Price</th>
-                        <th>Condition</th>
                         
                       
                        </tr>
@@ -32,15 +30,11 @@
                     <% }else { %>
                         <% items.forEach(item=> { %>
                     <tr>   
-                        <td><img src="/imgs/<%= item.image %>"  width="120"height="120"></td>
-                        <td><%= item.name %></td>
+                        <td><img src="/imgs/<%=item.image %>"  width="120"height="120"></td>
+                        <td><%= item.category %></td>
                         <td><%= item.price %></td>
-                        <td><%= item.quantity %></td>
 
                <td>
-                <a href="/cart"> 
-                         <button>Add to cart</button> 
-                           </a>
                            <a href="">
                               <button>Remove</button></td>
                            </a>
@@ -59,9 +53,9 @@
                
             </div>
 
-            <form method="POST" action="/wishlist?_method=DELETE">
+            <a href="/deletewishlist">
                 <button class="delbutton">Delete wishlist</button>
-              </form>
+            </a>
           
 
         
