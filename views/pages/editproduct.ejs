@@ -9,6 +9,43 @@
     <title><%=title%>></title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+           const editButtons = document.querySelectorAll('.edit-btn');
+
+           editButtons.forEach((button) => {
+               button.addEventListener('click', async (e) => {
+                   e.preventDefault();
+                   console.log('Delete button clicked'); 
+                   const targetButton = e.target.closest('.edit-btn');
+                   targetButton.disabled = true; 
+                   const id = targetButton.getAttribute('element-id');
+
+                   if (!id) {
+                       alert('Error: Product ID is not set.');
+                       targetButton.disabled = false; 
+                       return;
+                   }
+
+                   try {
+                       const response = await fetch(`/myStore/edit/${id}`, {
+                           method: 'PUT',
+                       });
+
+                       if (response.status === 200) {
+                           targetButton.closest('tr').remove();
+                           alert('Product ubdated successfully');
+                       } else {
+                           throw new Error('Failed to update product.');
+                       }
+                   } catch (error) {
+                       alert(error.message);
+                       targetButton.disabled = false; 
+                   }
+               });
+           });
+       });
+</script>
 <body>
   
     <%- include('../partials/adminNav') %>
@@ -18,7 +55,7 @@
     <div class="container">
         <header>Edit Product </header>
 
-        <form id="form" action="/editProduct" method="put" enctype="multipart/form-data">
+        <form id="form" action="/editproduct/edit/ "  method="post" enctype="multipart/form-data">
   <div class="form first">
     <div class="product details">
     <div class="fields">
