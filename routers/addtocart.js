@@ -30,6 +30,7 @@ router.get('/', async (req, res) => {
       }
       if (newItem) {
         cart.push({
+          id: product.id,
           name: product.name,
           category: product.category,
           quantity: quantity,

@@ -10,26 +10,26 @@ router.get('/', async (req, res) => {
         return res.status(404).send(`Product not found for ID: ${req.query.id}`);
       }
   
-
+      // Get the quantity chosen by the user from the query parameter
+      const quantity = parseInt(req.query.quantity) || 1;
   
-      
-      if (!req.session.wishlist) {
-        req.session.wishlist = [];
+      // Initialize cart to an empty array if it is undefined
+      if (!req.session.whishlist) {
+        req.session.whishlist = [];
       }
   
-    
-
-      let wishlist= req.session.wishlist;
+      // Add product to cart
+      let whishlist = req.session.whishlist;
       let newItem = true;
-      for (let i = 0; i < wishlist.length; i++) {
-        if (wishlist[i].name === product.name) {
-         newItem = false;
-         
+      for (let i = 0; i < whishlist.length; i++) {
+        if (whishlist[i].name === product.name) {
+            whishlist[i].quantity += quantity;
+          newItem = false;
           break;
         }
       }
       if (newItem) {
-        wishlist.push({
+        whishlist.push({
           name: product.name,
           category: product.category,
           quantity: quantity,
@@ -38,14 +38,12 @@ router.get('/', async (req, res) => {
           image: product.image
         });
       }
-      console.log(req.session.wishlist);
+      console.log(req.session.whishlist);
       res.redirect('wishlist');
-    } 
-    catch (error) {
+    } catch (error) {
       console.error(error.message);
-      res.redirect('categories');
+      res.redirect('pages/categories');
     }
   });
-
 
 export default router;

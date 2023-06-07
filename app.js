@@ -9,15 +9,11 @@ import fileUpload from "express-fileupload";
 import Users from "./models/user.js";
 import bodyParser from "body-parser";
 import flash from 'connect-flash';
+import nodemailer from 'nodemailer';
 
 const dburi =
   "mongodb+srv://mamdouh:123@cluster0.w6r6q8x.mongodb.net/MyDatabase?retryWrites=true&w=majority";
 
-/*mongoose.connect(dburi)
-.then(result=>app.listen(8080,(req,res)=>{
-  console.log("listning on port 8080");
-}))
-.catch(console.log("Connecting to database...."));*/
 
 const app = express();
 
@@ -64,11 +60,13 @@ import addProd_router from "./routers/addProduct.js";
 import dash_router from "./routers/dashboard.js";
 import removeuser_router from "./routers/removeUser.js";
 import mystore_router from "./routers/myStore.js";
-
 import logout_router from "./routers/logout.js";
 import editprod_router from"./routers/editproduct.js";
 import addtocart_router from "./routers/addtocart.js";
-import wishlist_router from "./routers/wishlist.js";
+import wishlist_router from "./routers/addtowishlist.js";
+import deletfromcart_router from "./routers/deletefromcart.js";
+
+
  
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -103,7 +101,6 @@ app.use(flash());
  app.use('/L-shape', Lshape_router);
  app.use('/login', Login_router);
  app.use('/privacyPolicy', priv_router);
-
  app.use('/terms&condition', terms_router);
  app.use('/wardrobe', wardrobe_router);
  app.use('/wishlist', wish_router);
@@ -121,116 +118,19 @@ app.use(flash());
  app.use('/adduser',adduser_router);
  app.use('/myStore',mystore_router);
  app.use('/removeuser',removeuser_router);
-
  app.use('/logout',logout_router);
  app.use('/userForm',adduserroute_router);
  app.use('/editproduct',editprod_router);
  app.use('/addtocart',addtocart_router);
+ app.use('/deletefromcart',deletfromcart_router);
 
+ app.use("/myStore/edit", editprod_router);
+ app.use("/addtowishlist",wishlist_router);
  app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use("/myStore/edit", editprod_router);
-app.use("/addtowishlist",wishlist_router);
 
- /*
-  app.get('/add',(req,res)=>{
-  const user=new Users({
-    Firstname:"Mamdouh",
-    Lastname:"SHAWER",
-    Username:"Ayhaga",
-    email:"mamdouh@gmail.com",
-    password:"123",
-    image:"mamdouh",
-    type:"admin"
-  })
-
-  user.save();
- /* .then(result=>{
-    res.send(result);
-  })
-  .catch(err=>{
-    console.log(err);
-  });*/
-app.get("/add", (req, res) => {
-  const user = new Users({
-    Firstname: "Mamdouh",
-    Lastname: "SHAWER",
-    Username: "Ayhaga",
-    email: "mamdouh@gmail.com",
-    password: "123",
-    image: "mamdouh",
-    type: "admin",
-  });
-
-  user
-    .save()
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-/*
-app.get('/add',(req,res)=>{
-  //const signup =new Signup(req.body)
-    
-
-    const user = new Users ({
-      Firstname: req.body.first,
-      Lastname: req.body.last,
-      Username: req.body.username,
-      email: req.body.email,
-      password: req.body.pass,
-      confirmPassword: req.body.pass2,
-      type:req.body.type,
-      });
-
-      console.log(req.body)
-   user.save()
-    .then( result => {
-        res.redirect("/")
-    })
-    .catch( err => {
-        console.log(err)
-    })
-});
-
-*/
-/*
-app.get('/addProduct',(req,res)=>{
-  const products =new prod({
-    id:"1",
-    image:"rana",
-    category:"beds",
-    description:"ayhaga",
-    price:"12LE",
-    quantity:"12"
-
-  })
-
-  products.save()
-  .then(result=>{
-    res.send(result);
-  })
-  .catch(err=>{
-    console.log(err);
-  });
-
-});*/
-
-/*
-// Error handling
-app.use(function(err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-  res.status(err.status || 500);
-  res.render('pages/error');
-});
-
-*/
 //session
 app.get("/", (req, res, next) => {
   res.render("index", {
