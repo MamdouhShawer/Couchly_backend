@@ -1,3 +1,48 @@
+@media only screen and (max-width: 576px) {
+    body {
+      min-height: auto;
+    }
+    
+    .container {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 20px;
+    }
+  
+    .container form .fields.input-field {
+      width: 100%;
+    }
+  
+    .input-field input {
+      width: 100%;
+    }
+  
+    .input-field textarea {
+      width: 100%;
+    }
+  
+    .container form button {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  
+  /* Tablets and larger screens */
+  @media only screen and (min-width: 577px) {
+    .container {
+      width: 70%;
+      margin-left: 15%;
+      margin-top: 70px;
+    }
+  
+    .input-field input,
+    .input-field textarea {
+      width: 100%;
+    }
+  }
 @import url('http://fonts googlepis.com/css2?family=poppins:wght@200;300;400;500;600&display=swap');
 * {
     margin: 0;
@@ -401,7 +446,7 @@ form .fields.input-field
     border-radius: 5px;
     border: 1px solid #aaa;
     padding: 0 15px;
-    width: 250px;
+    width: 50%;
     height: 42px;
     margin: 8px 0;
 }
@@ -419,7 +464,7 @@ form .fields.input-field
     border-radius: 5px;
     border: 1px solid #aaa;
     padding: 0 15px;
-    width: 250px;
+    width: 50%;
     height: 42px;
     margin: 8px 0;
 }
